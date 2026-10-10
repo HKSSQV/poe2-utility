@@ -1,6 +1,6 @@
 /**
- * 0 이상 정수 중 n 이상에 걸리는 정규식 조각.
- * 예: 27 → `([3-9]\d|2[7-9]|\d{3,})`, 100 → `([2-9]\d\d|1[1-9]\d|10\d|\d{4,})`
+ * A regex fragment that matches integers greater than or equal to n.
+ * Example: 27 → `([3-9]\d|2[7-9]|\d{3,})`, 100 → `([2-9]\d\d|1[1-9]\d|10\d|\d{4,})`
  */
 export function atLeast(n: number): string {
   const value = Math.max(0, Math.floor(n));
@@ -9,7 +9,7 @@ export function atLeast(n: number): string {
   const len = digits.length;
   const parts: string[] = [];
 
-  // 같은 자릿수에서 n 이상
+  // Match numbers with the same digit length that are >= n
   for (let i = 0; i < len; i += 1) {
     const prefix = digits.slice(0, i);
     const d = Number(digits[i]);
@@ -21,7 +21,7 @@ export function atLeast(n: number): string {
       parts.push(prefix + (d + 1 === 9 ? "9" : `[${d + 1}-9]`) + tail);
     }
   }
-  // 자릿수가 더 많은 수
+  // Match numbers with more digits
   parts.push(`\\d{${len + 1},}`);
   return `(${parts.join("|")})`;
 }
