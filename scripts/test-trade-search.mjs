@@ -2,9 +2,9 @@ const UA = "OAuth poe2-utility/0.1 (+https://github.com/GitDevWorld/poe2-utility
 const LEAGUE = "Forbidden Rites";
 
 const tests = [
-  { name: "prefix1 rarity", stat: "explicit.stat_2306002879" },
-  { name: "prefix2 pack", stat: "explicit.stat_2017682521" },
-  { name: "prefix3 magic mon", stat: "explicit.stat_3873704640" },
+  { name: "Item Rarity Prefix", stat: "explicit.stat_2306002879" },
+  { name: "Pack Size Prefix", stat: "explicit.stat_2017682521" },
+  { name: "Magic Monsters Prefix", stat: "explicit.stat_3873704640" },
 ];
 
 function body(stat, rarity) {
