@@ -6,29 +6,29 @@ export function iconUrl(image: string): string {
 
 export function formatRate(value: number): string {
   if (!Number.isFinite(value) || value <= 0) return "—";
-  if (value >= 1000) return value.toLocaleString("ko-KR", { maximumFractionDigits: 0 });
-  if (value >= 100) return value.toLocaleString("ko-KR", { maximumFractionDigits: 1 });
-  if (value >= 10) return value.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
-  if (value >= 1) return value.toLocaleString("ko-KR", { maximumFractionDigits: 3 });
-  if (value >= 0.01) return value.toLocaleString("ko-KR", { maximumFractionDigits: 4 });
-  return value.toLocaleString("ko-KR", { maximumSignificantDigits: 3 });
+  if (value >= 1000) return value.toLocaleString("en-US", { maximumFractionDigits: 0 });
+  if (value >= 100) return value.toLocaleString("en-US", { maximumFractionDigits: 1 });
+  if (value >= 10) return value.toLocaleString("en-US", { maximumFractionDigits: 2 });
+  if (value >= 1) return value.toLocaleString("en-US", { maximumFractionDigits: 3 });
+  if (value >= 0.01) return value.toLocaleString("en-US", { maximumFractionDigits: 4 });
+  return value.toLocaleString("en-US", { maximumSignificantDigits: 3 });
 }
 
 export function formatVolume(value: number): string {
   if (!Number.isFinite(value) || value <= 0) return "—";
   if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
   if (value >= 1_000) return `${(value / 1_000).toFixed(1)}k`;
-  return value.toLocaleString("ko-KR", { maximumFractionDigits: 1 });
+  return value.toLocaleString("en-US", { maximumFractionDigits: 1 });
 }
 
 export function timeAgo(timestamp: number): string {
   const seconds = Math.max(0, Math.round((Date.now() - timestamp) / 1000));
-  if (seconds < 10) return "방금";
-  if (seconds < 60) return `${seconds}초 전`;
+  if (seconds < 10) return "just now";
+  if (seconds < 60) return `${seconds}s ago`;
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes}분 전`;
+  if (minutes < 60) return `${minutes}m ago`;
   const hours = Math.floor(minutes / 60);
-  return `${hours}시간 전`;
+  return `${hours}h ago`;
 }
 
 export function formatPct(value: number): string {
