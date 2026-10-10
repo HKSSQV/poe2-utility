@@ -1,5 +1,4 @@
 import { CATEGORIES, type CategoryId, type ExchangeOverview, type League, type MarketRow } from "./types";
-import { koreanName } from "./i18n";
 
 const CACHE_MS = 5 * 60 * 1000;
 
@@ -15,7 +14,7 @@ async function fetchJson<T>(path: string): Promise<T> {
     headers: { Accept: "application/json" },
   });
   if (!response.ok) {
-    throw new Error(`시세 조회 실패 (${response.status})`);
+    throw new Error(`Failed to fetch market rates (${response.status})`);
   }
   return (await response.json()) as T;
 }
@@ -87,7 +86,6 @@ export async function getMarket(
       rows.set(`${category}:${line.id}`, {
         id: line.id,
         name: meta.name,
-        koName: koreanName(line.id, meta.name, meta.detailsId),
         image: meta.image,
         category: meta.category || category,
         categoryId: category,
@@ -99,7 +97,7 @@ export async function getMarket(
   }
 
   if (rows.size === 0) {
-    throw new Error("시세 데이터가 없습니다. 리그 또는 네트워크를 확인하세요.");
+    throw new Error("No market data available. Please check your league selection or network connection.");
   }
 
   return {
