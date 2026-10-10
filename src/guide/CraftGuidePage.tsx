@@ -5,71 +5,71 @@ type ItemId = keyof typeof ITEMS;
 
 const ITEMS = {
   perfectExalt: {
-    name: "완벽한 엑잘티드 오브",
+    name: "Perfect Exalted Orb",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
   },
   catalysing: {
-    name: "촉진하는 찬미의 징조",
+    name: "Catalysing Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uRXhhbHRDb25zdW1lUXVhbGl0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ca4d0db767/OmenOnExaltConsumeQuality.png",
   },
   dextralExalt: {
-    name: "우측 찬미의 징조",
+    name: "Dextral Exalted Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ed7cf06fa4/VoodooOmens3Yellow.png",
   },
   sinistralCrystal: {
-    name: "좌측 결정화의 징조",
+    name: "Sinistral Crystallising Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUGVyZmVjdEVzc2VuY2VQcmVmaXgiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/75263d6201/OmenOnPerfectEssencePrefix.png",
   },
   sinistralAnnul: {
-    name: "좌측 소멸의 징조",
+    name: "Sinistral Annulment Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyUHVycGxlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b9eaf38592/VoodooOmens2Purple.png",
   },
   annul: {
-    name: "소멸의 오브",
+    name: "Orb of Annulment",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQW5udWxsT3JiIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/2daba8ccca/AnnullOrb.png",
   },
   light: {
-    name: "빛의 징조",
+    name: "Omen of Light",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQW5udWxSZW1vdmVBYnlzc01vZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/eb39bcb3d7/OmenOnAnnulRemoveAbyssMod.png",
   },
   breachEssence: {
-    name: "균열의 에센스",
+    name: "Breach Essence",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9CcmVhY2hFc3NlbmNlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/60e81fa5eb/BreachEssence.png",
   },
   xophCatalyst: {
-    name: "조프의 기폭제 (화염 저항)",
+    name: "Xoph's Catalyst (Fire Resistance)",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RmlyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/05b1999374/BreachCatalystFire.png",
   },
   tulCatalyst: {
-    name: "툴의 기폭제 (냉기 저항)",
+    name: "Tul's Catalyst (Cold Resistance)",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q29sZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c3bc9abf43/BreachCatalystCold.png",
   },
   eshCatalyst: {
-    name: "에쉬의 기폭제 (번개 저항)",
+    name: "Esh's Catalyst (Lightning Resistance)",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlnaHRuaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/299e62fc33/BreachCatalystLightning.png",
   },
   reaverCatalyst: {
-    name: "강탈자 기폭제",
+    name: "Reaver Catalyst",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0YWNrIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ccc363f502/BreachCatalystAttack.png",
   },
   greaterExalt: {
-    name: "상위 찬미의 징조",
+    name: "Greater Exalted Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/22d9b6478d/VoodooOmens1Yellow.png",
   },
   dextralNecro: {
-    name: "우측 강령술의 징조",
+    name: "Dextral Necromancy Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NBZGRTdWZmaXhlcyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/93e1dd20ce/OmenOnAbyssAddSuffixes.png",
   },
   abyssalEchoes: {
-    name: "심연의 메아리의 징조",
+    name: "Omen of Abyssal Echoes",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NSZXJvbGxPcHRpb25zIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9690f99016/OmenOnAbyssRerollOptions.png",
   },
   sinistralNecro: {
-    name: "좌측 강령술의 징조",
+    name: "Sinistral Necromancy Omen",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NBZGRQcmVmaXhlcyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/1c0a646414/OmenOnAbyssAddPrefixes.png",
   },
   collarbone: {
-    name: "빗장뼈",
+    name: "Preserved Calicle",
     image: "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvUHJlc2VydmVkQ2FsdmljbGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6f63f7462d/PreservedCalvicle.png",
   },
 } as const;
@@ -98,294 +98,294 @@ type Step = {
   next?: { label: string; to: StepId | "end"; ok: boolean; endText?: string }[];
 };
 
-// 옵션 문구·티어 범위는 poe2db(한국어) 반지 옵션 기준.
-const RARITY_P = "발견하는 아이템 희귀도 18% 증가"; // 접두 1티어 (16—19)%
-const RARITY_S = "발견하는 아이템 희귀도 17% 증가"; // 접미 1티어 (15—18)%
-const FIRE_RES = "화염 저항 +43%"; // 1티어 (41—45)%
-const ALL_RES = "모든 원소 저항 +16%"; // 1티어 (15—16)%
-const ATTACK_T1 = "공격 시 물리 피해 15~28 추가"; // 1티어 (12—19)~(22—32)
-const MAX_QUALITY = "최대 퀄리티 +20%"; // 균열의 에센스
+// Option texts and tier ranges based on poe2db (English) ring modifiers.
+const RARITY_P = "Item Rarity in Maps increased by 18%"; // Prefix Tier 1 (16–19)%
+const RARITY_S = "Item Rarity in Maps increased by 17%"; // Suffix Tier 1 (15–18)%
+const FIRE_RES = "+43% to Fire Resistance"; // Tier 1 (41–45)%
+const ALL_RES = "+16% to all Elemental Resistances"; // Tier 1 (15–16)%
+const ATTACK_T1 = "Adds 15 to 28 Physical Damage to Attacks"; // Tier 1 (12–19) to (22–32)
+const MAX_QUALITY = "Maximum Quality increased by +20%"; // Breach Essence
 
 const TIER_HINTS: Record<string, string> = {
-  [RARITY_P]: "1티어",
-  [RARITY_S]: "1티어",
-  [FIRE_RES]: "1티어",
-  [ALL_RES]: "1티어",
-  [ATTACK_T1]: "1티어",
+  [RARITY_P]: "Tier 1",
+  [RARITY_S]: "Tier 1",
+  [FIRE_RES]: "Tier 1",
+  [ALL_RES]: "Tier 1",
+  [ATTACK_T1]: "Tier 1",
 };
 
 const MAIN_STEPS: Step[] = [
   {
     id: "start",
-    title: "시작 — 베스트 베이스",
+    title: "Start — Best Base",
     body: [
-      "접두에 분열된 발견하는 아이템 희귀도 증가, 접미에 발견하는 아이템 희귀도 증가 + 저항 1티어가 붙은 베스트 베이스로 시작한다.",
-      "베스트 베이스 매물이 없어서 대체 베이스(저항 없음)를 샀다면 위의 베이스 만드는 법을 먼저 진행한다 — 끝나면 1·2번을 건너뛰고 3번으로 합류한다.",
+      "Start with the best base: Fractured Item Rarity prefix, along with Item Rarity and a Tier 1 Resistance on suffixes.",
+      "If you couldn't find a best base and bought an alternative base (without resistance), follow the Base Crafting steps first — once finished, skip steps 1 & 2 and join at step 3.",
     ],
     items: [],
     next: [
-      { label: "베스트 베이스면", to: "1", ok: true },
-      { label: "대체 베이스면", to: "M1", ok: true },
+      { label: "If Best Base", to: "1", ok: true },
+      { label: "If Alternative Base", to: "M1", ok: true },
     ],
     ring: {
       prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, null],
-      note: "베스트 베이스",
+      note: "Best Base",
     },
   },
   {
     id: "1",
-    title: "기폭제 작업 — 저항 기폭제 퀄리티 20%",
+    title: "Catalyst Application — 20% Resistance Catalyst Quality",
     body: [
-      "접미의 속성 저항과 동일한 기폭제를 사서 퀄리티 20%까지 바른다.",
-      "화염 저항이면 조프의 기폭제, 냉기 저항이면 툴의 기폭제, 번개 저항이면 에쉬의 기폭제 — 셋 중 하나만 쓴다.",
+      "Buy catalysts matching your suffix resistance and apply them up to 20% quality.",
+      "Use Xoph's Catalyst for Fire, Tul's Catalyst for Cold, or Esh's Catalyst for Lightning — use only one.",
     ],
     items: ["xophCatalyst", "tulCatalyst", "eshCatalyst"],
     ring: {
-      quality: "퀄리티 20% (화염)",
+      quality: "Quality 20% (Fire)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, null],
-      note: "옵션 변화 없음 — 퀄리티만 올림",
+      note: "No modifier changes — quality increased",
     },
   },
   {
     id: "2",
-    title: "촉진하는 찬미의 징조 — 접미 모든 원소 저항 노리기",
+    title: "Catalysing Omen — Targeting All Elemental Resistances",
     body: [
-      "촉진하는 찬미의 징조 + 우측 찬미의 징조 + 상위 찬미의 징조 + 완벽한 엑잘티드 오브로 모든 원소 저항을 노린다.",
-      "상위 찬미의 징조로 옵션이 2개 붙는데, 접미가 다 차면 남은 하나는 접두에 붙는다 — 3번에서 바를 잡옵션을 미리 붙이는 셈.",
-      "촉진하는 찬미의 징조는 기폭제 퀄리티를 모두 소모한다 — 이후 퀄리티는 0%.",
-      "모든 원소 저항이 안 나오면 망함. 그래도 유효 옵션이 나왔으면 계속 진행.",
-      "유효 옵션이 안 나오면 절사로 절대 못 살린다 (접미의 발견하는 아이템 희귀도 증가 옵션 때문에).",
+      "Target All Elemental Resistances using Catalysing Omen + Dextral Exalted Omen + Greater Exalted Omen + Perfect Exalted Orb.",
+      "Greater Exalted Omen adds 2 modifiers. If suffixes are full, the extra modifier goes to prefixes — effectively preparing a junk mod for step 3.",
+      "Catalysing Omen consumes all catalyst quality — quality drops to 0% afterwards.",
+      "If All Elemental Resistances doesn't roll, it's a fail. Continue if a useful modifier hits.",
+      "If no useful modifier hits, you cannot salvage it with an annulment (due to the Item Rarity suffix).",
     ],
     items: ["catalysing", "dextralExalt", "greaterExalt", "perfectExalt"],
     tone: "fail",
     next: [
-      { label: "성공 시", to: "3", ok: true },
-      { label: "실패 시", to: "end", ok: false, endText: "끝 (절사로도 못 살림)" },
+      { label: "On Success", to: "3", ok: true },
+      { label: "On Failure", to: "end", ok: false, endText: "End (Cannot salvage with annul)" },
     ],
     ring: {
-      quality: "퀄리티 0% (촉진하는 찬미의 징조로 소모)",
-      prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: "정확도 +120", kind: "new", hint: "잡옵션" }, null],
+      quality: "Quality 0% (Consumed by Catalysing Omen)",
+      prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: "+120 to Accuracy Rating", kind: "new", hint: "Junk mod" }, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES, kind: "new" }],
-      note: "접미 완성 + 접두에 옵션 1개",
+      note: "Suffixes completed + 1 prefix mod",
     },
   },
   {
     id: "3",
-    title: "접두에 붙은 옵션 확인",
+    title: "Check Prefix Modifier",
     body: [
-      "2번에서 접두에 붙은 옵션을 확인한다.",
-      "잡옵션이면 그대로 4번으로 — 균열의 에센스로 교체할 자리다.",
-      "공격 1티어가 붙어버렸으면 변형 루트로 간다.",
+      "Check the modifier added to prefixes in step 2.",
+      "If it's a junk mod, proceed to step 4 — this is the slot to replace with Breach Essence.",
+      "If Tier 1 Attack Damage hit instead, switch to the Variant route.",
     ],
     items: [],
     next: [
-      { label: "잡옵션이면", to: "4", ok: true },
-      { label: "공격 1티어가 붙으면", to: "V1", ok: true },
+      { label: "If Junk Mod", to: "4", ok: true },
+      { label: "If Tier 1 Attack Mod", to: "V1", ok: true },
     ],
     ring: {
-      quality: "퀄리티 0%",
-      prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: "정확도 +120", hint: "잡옵션" }, null],
+      quality: "Quality 0%",
+      prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: "+120 to Accuracy Rating", hint: "Junk mod" }, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "잡옵션이 붙은 경우",
+      note: "When a junk mod is present",
     },
   },
   {
     id: "4",
-    title: "균열의 에센스 — 최대 퀄리티 +20%",
+    title: "Breach Essence — Maximum Quality +20%",
     body: [
-      "무효 옵션(잡옵션)을 균열의 에센스 + 좌측 결정화의 징조로 바꾼다.",
-      "균열의 에센스는 반지에 접두 '최대 퀄리티 +20%'를 붙인다 — 이 옵션이 있어야 기폭제를 퀄리티 40%까지 바를 수 있다.",
+      "Replace the junk modifier using Breach Essence + Sinistral Crystallising Omen.",
+      "Breach Essence adds 'Maximum Quality increased by +20%' to prefixes — this mod is required to apply catalyst quality up to 40%.",
     ],
     items: ["breachEssence", "sinistralCrystal"],
     ring: {
-      quality: "퀄리티 0% (최대 40%)",
+      quality: "Quality 0% (Max 40%)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: MAX_QUALITY, kind: "new" }, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "잡옵션 → 최대 퀄리티 +20%",
+      note: "Junk mod → Max Quality +20%",
     },
   },
   {
     id: "5",
-    title: "기폭제 작업 — 강탈자 기폭제 퀄리티 20%",
+    title: "Catalyst Application — 20% Reaver Catalyst Quality",
     body: [
-      "현재 상태: 접두 분열 발견하는 아이템 희귀도 증가 + 최대 퀄리티 +20% · 접미 완성.",
-      "강탈자 기폭제(공격)를 퀄리티 20%까지만 바른다.",
+      "Current state: Fractured Item Rarity prefix + Max Quality +20% · Suffixes completed.",
+      "Apply Reaver Catalyst (Attack) up to 20% quality.",
     ],
     items: ["reaverCatalyst"],
     ring: {
-      quality: "퀄리티 20% (공격)",
+      quality: "Quality 20% (Attack)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: MAX_QUALITY }, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "옵션 변화 없음 — 퀄리티만 올림",
+      note: "No modifier changes — quality increased",
     },
   },
   {
     id: "6",
-    title: "촉진하는 찬미의 징조 — 공격 1티어 기도",
+    title: "Catalysing Omen — Praying for Tier 1 Attack",
     body: [
-      "촉진하는 찬미의 징조 + 완벽한 엑잘티드 오브로 공격 1티어를 기도한다.",
-      "기폭제 퀄리티는 여기서 모두 소모된다.",
+      "Pray for Tier 1 Attack Damage using Catalysing Omen + Perfect Exalted Orb.",
+      "Catalyst quality is fully consumed here.",
     ],
     items: ["catalysing", "perfectExalt"],
     next: [
-      { label: "성공 시", to: "7", ok: true },
-      { label: "실패 시", to: "B", ok: false },
+      { label: "On Success", to: "7", ok: true },
+      { label: "On Failure", to: "B", ok: false },
     ],
     ring: {
-      quality: "퀄리티 0% (촉진하는 찬미의 징조로 소모)",
+      quality: "Quality 0% (Consumed by Catalysing Omen)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: MAX_QUALITY }, { text: ATTACK_T1, kind: "new" }],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "접두 3칸 모두 참",
+      note: "All 3 prefix slots filled",
     },
   },
   {
     id: "7",
-    title: "강탈자 기폭제 퀄리티 40%",
+    title: "Reaver Catalyst 40% Quality",
     body: [
-      "최대 퀄리티 +20% 옵션이 남아 있을 때 강탈자 기폭제를 퀄리티 40%까지 바른다.",
-      "다음 단계에서 이 옵션이 지워지기 전에 꼭 40%까지 해둬야 한다.",
+      "While the Maximum Quality +20% modifier is still present, apply Reaver Catalyst up to 40% quality.",
+      "Make sure to do this before the mod gets removed in the next step.",
     ],
-    callout: "최대 퀄리티 +20%가 지워지기 전에 꼭 퀄리티 40%까지 바를 것 — 실패하면 강탈자 기폭제 값이 날아간다.",
+    callout: "Be sure to reach 40% quality before Maximum Quality +20% is removed — failing means wasting Reaver Catalyst costs.",
     items: ["reaverCatalyst"],
     ring: {
-      quality: "퀄리티 40% (공격)",
+      quality: "Quality 40% (Attack)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, { text: MAX_QUALITY }, { text: ATTACK_T1 }],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "옵션 변화 없음 — 공격 퀄리티 0% → 40%",
+      note: "No modifier changes — Attack quality 0% → 40%",
     },
   },
   {
     id: "8",
-    title: "심연 훼손 5:5",
+    title: "Abyssal Desecration 50:50",
     body: [
-      "가장 중요한 씹기도메타. 좌측 강령술의 징조 + 빗장뼈로 접두 심연 훼손 5:5를 노린다.",
-      "최대 퀄리티 +20% 쪽이 훼손되면 성공. 공격 1티어가 날아가면 6번부터 다시 — 이때 바른 강탈자 기폭제 퀄리티 40%가 촉진하는 찬미의 징조로 소모된다.",
+      "The ultimate coin flip. Use Sinistral Necromancy Omen + Preserved Calicle to target prefix Abyssal Desecration 50:50.",
+      "Success if Maximum Quality +20% gets desecrated. If Tier 1 Attack gets wiped, restart from step 6 — the 40% Reaver Catalyst quality will be consumed by Catalysing Omen.",
     ],
     items: ["sinistralNecro", "collarbone"],
     next: [
-      { label: "성공 시", to: "9", ok: true },
-      { label: "실패 시 (공격 1티어 날아감)", to: "6", ok: false },
+      { label: "On Success", to: "9", ok: true },
+      { label: "On Failure (Tier 1 Attack wiped)", to: "6", ok: false },
     ],
     ring: {
-      quality: "퀄리티 40% (공격)",
+      quality: "Quality 40% (Attack)",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
         { text: MAX_QUALITY, kind: "gamble" },
         { text: ATTACK_T1, kind: "gamble" },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "둘 중 하나가 5:5로 훼손 — 최대 퀄리티 쪽이면 성공",
+      note: "One of the two is desecrated 50:50 — Max Quality side is success",
     },
   },
   {
     id: "9",
-    title: "게임 오버 — 빛의 징조 무한 반복",
-    body: ["8번이 성공했다면 그때는 게임 오버. 빛의 징조 + 소멸의 오브를 무한 반복해서 공격 1티어를 띄우면 된다."],
+    title: "Game Over — Infinite Omen of Light Loop",
+    body: ["If step 8 succeeded, it's game over. Loop Omen of Light + Orb of Annulment until Tier 1 Attack hits."],
     items: ["light", "annul", "sinistralNecro", "collarbone"],
-    next: [{ label: "성공 시", to: "done", ok: true }],
+    next: [{ label: "On Success", to: "done", ok: true }],
     ring: {
-      quality: "퀄리티 40% (공격)",
+      quality: "Quality 40% (Attack)",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
-        { text: "훼손 → 공격 1티어 뜰 때까지 반복", kind: "desecrated" },
+        { text: "Desecrated → Loop until Tier 1 Attack hits", kind: "desecrated" },
         { text: ATTACK_T1 },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "빛의 징조는 훼손 옵션만 지우므로 나머지는 안전",
+      note: "Omen of Light removes only desecrated mods, keeping the rest safe",
     },
   },
   {
     id: "done",
-    title: "완성 — 풀매찬 황금 반지",
+    title: "Completed — Full Rarity Gold Ring",
     body: [
-      "접두: 분열 발견하는 아이템 희귀도 증가 + 공격 시 물리 피해 추가(1티어) + 훼손 옵션.",
-      "접미: 발견하는 아이템 희귀도 증가 + 1티어 저항 + 모든 원소 저항.",
-      "끝. 조시? 뜻대로 될 것 같제? 사는 게 금전적으로도 정신적으로도 이득이다.",
+      "Prefixes: Fractured Item Rarity increased + Added Physical Damage to Attacks (Tier 1) + Desecrated mod.",
+      "Suffixes: Item Rarity increased + Tier 1 Resistance + All Elemental Resistances.",
+      "Done. Buying it ready is financially and mentally better.",
     ],
     items: [],
     ring: {
-      quality: "퀄리티 40% (공격)",
+      quality: "Quality 40% (Attack)",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
         { text: ATTACK_T1 },
-        { text: "공격 1티어 훼손 옵션 확정", kind: "desecrated" },
+        { text: "Tier 1 Attack Desecrated mod locked", kind: "desecrated" },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "완성 상태",
+      note: "Completed State",
     },
   },
 ];
 
 const GOLD_RING_ICON = "https://cdn.poe2db.tw/image/Art/2DItems/Rings/Basetypes/GoldRing.webp";
-const DESECRATED_RES = "화염 저항 +33%";
+const DESECRATED_RES = "+33% to Fire Resistance";
 const RES_CATALYSTS: ItemId[] = ["xophCatalyst", "tulCatalyst", "eshCatalyst"];
 
 const MAKE_STEPS: Step[] = [
   {
     id: "M1",
-    title: "우측 강령술의 징조 + 빗장뼈 + 심연의 메아리의 징조 — 아무 저항 찾기",
+    title: "Dextral Necromancy Omen + Preserved Calicle + Omen of Abyssal Echoes — Find Any Resistance",
     body: [
-      "우측 강령술의 징조 + 빗장뼈로 접미에 훼손 옵션을 붙인다.",
-      "공개할 때 심연의 메아리의 징조로 선택지를 한 번 더 굴려서, 6개 안에서 아무 저항이나 고른다.",
+      "Apply a desecrated modifier to suffixes using Dextral Necromancy Omen + Preserved Calicle.",
+      "When revealing, use Omen of Abyssal Echoes to reroll options once, and pick any resistance out of the 6 choices.",
     ],
     items: ["dextralNecro", "collarbone", "abyssalEchoes"],
-    next: [{ label: "저항이 나오면", to: "M2", ok: true }],
+    next: [{ label: "If Resistance Hits", to: "M2", ok: true }],
     ring: {
       prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
-      suffixes: [{ text: RARITY_S }, { text: DESECRATED_RES, kind: "desecrated", hint: "아무 저항" }, null],
-      note: "접미에 훼손 저항",
+      suffixes: [{ text: RARITY_S }, { text: DESECRATED_RES, kind: "desecrated", hint: "Any resistance" }, null],
+      note: "Desecrated resistance on suffixes",
     },
   },
   {
     id: "M2",
-    title: "해당 기폭제 바르고 모든 원소 저항 띄우기",
+    title: "Apply Matching Catalyst & Roll All Elemental Resistances",
     body: [
-      "붙은 저항과 같은 기폭제를 퀄리티 20%까지 바른다.",
-      "촉진하는 찬미의 징조 + 우측 찬미의 징조 + 완벽한 엑잘티드 오브로 모든 원소 저항을 띄운다.",
+      "Apply catalysts matching the rolled resistance up to 20% quality.",
+      "Use Catalysing Omen + Dextral Exalted Omen + Perfect Exalted Orb to roll All Elemental Resistances.",
     ],
     items: [...RES_CATALYSTS, "catalysing", "dextralExalt", "perfectExalt"],
-    next: [{ label: "모든 원소 저항이 붙으면", to: "M3", ok: true }],
+    next: [{ label: "If All Elemental Resistances Hits", to: "M3", ok: true }],
     ring: {
-      quality: "퀄리티 0% (촉진하는 찬미의 징조로 소모)",
+      quality: "Quality 0% (Consumed by Catalysing Omen)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
       suffixes: [
         { text: RARITY_S },
-        { text: DESECRATED_RES, kind: "desecrated", hint: "아무 저항" },
+        { text: DESECRATED_RES, kind: "desecrated", hint: "Any resistance" },
         { text: ALL_RES, kind: "new" },
       ],
-      note: "접미 3칸 모두 참",
+      note: "All 3 suffix slots filled",
     },
   },
   {
     id: "M3",
-    title: "빛의 징조로 훼손 저항 삭제",
-    body: ["빛의 징조 + 소멸의 오브로 훼손된 저항만 지운다 — 나머지 옵션은 안전하다."],
+    title: "Remove Desecrated Resistance with Omen of Light",
+    body: ["Use Omen of Light + Orb of Annulment to remove only the desecrated resistance — the rest of the modifiers remain safe."],
     items: ["light", "annul"],
-    next: [{ label: "삭제 후", to: "M4", ok: true }],
+    next: [{ label: "After Removal", to: "M4", ok: true }],
     ring: {
-      quality: "퀄리티 0%",
+      quality: "Quality 0%",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
       suffixes: [{ text: RARITY_S }, null, { text: ALL_RES }],
-      note: "훼손 저항 자리가 비었다",
+      note: "Desecrated resistance slot is now empty",
     },
   },
   {
     id: "M4",
-    title: "다시 기폭제 바르고 저항 붙이기",
+    title: "Reapply Catalyst and Add Desired Resistance",
     body: [
-      "원하는 저항의 기폭제를 다시 퀄리티 20%까지 바른다.",
-      "촉진하는 찬미의 징조 + 우측 찬미의 징조 + 완벽한 엑잘티드 오브로 저항을 붙인다.",
-      "접미가 성공 경로 2번을 마친 상태와 같아진다.",
+      "Apply catalysts of your desired resistance up to 20% quality again.",
+      "Use Catalysing Omen + Dextral Exalted Omen + Perfect Exalted Orb to add the resistance.",
+      "Suffixes now match the state after finishing step 2 of the success path.",
     ],
     items: [...RES_CATALYSTS, "catalysing", "dextralExalt", "perfectExalt"],
-    next: [{ label: "접두에 잡옵션 붙인 뒤", to: "3", ok: true }],
+    next: [{ label: "After Adding Junk Prefix", to: "3", ok: true }],
     ring: {
-      quality: "퀄리티 0% (촉진하는 찬미의 징조로 소모)",
+      quality: "Quality 0% (Consumed by Catalysing Omen)",
       prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES, kind: "new" }, { text: ALL_RES }],
-      note: "베이스 완성 — 접미 완성",
+      note: "Base completed — Suffixes completed",
     },
   },
 ];
@@ -393,69 +393,69 @@ const MAKE_STEPS: Step[] = [
 const VARIANT_STEPS: Step[] = [
   {
     id: "V1",
-    title: "접두에 잡옵션 한 번 더",
+    title: "Add One More Junk Prefix",
     body: [
-      "2번에서 접두에 공격 1티어가 붙었으면, 남은 접두 칸에 잡옵션을 하나 더 바른다.",
-      "여기서 유효 옵션이 또 붙으면 퀄리티 40% 작업은 포기하고 그대로 종료해도 된다.",
+      "If Tier 1 Attack landed on prefixes in step 2, apply one more junk modifier to the remaining prefix slot.",
+      "If another useful modifier hits here, you can abandon the 40% quality step and finish right here.",
     ],
     items: [],
-    branch: { label: "3번 공격 1티어", from: "3" },
+    branch: { label: "Step 3 Tier 1 Attack", from: "3" },
     next: [
-      { label: "유효 옵션이 붙으면", to: "end", ok: true, endText: "종료 (40% 퀄리티 작업 포기)" },
-      { label: "잡옵션이 붙으면", to: "V2", ok: false },
+      { label: "If Useful Mod Hits", to: "end", ok: true, endText: "Finish (Abandon 40% quality)" },
+      { label: "If Junk Mod Hits", to: "V2", ok: false },
     ],
     ring: {
-      quality: "퀄리티 0%",
+      quality: "Quality 0%",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
         { text: ATTACK_T1 },
-        { text: "정확도 +120", kind: "new", hint: "잡옵션" },
+        { text: "+120 to Accuracy Rating", kind: "new", hint: "Junk mod" },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "접두 공격 1티어 + 잡옵션",
+      note: "Prefix Tier 1 Attack + Junk mod",
     },
   },
   {
     id: "V2",
-    title: "좌측 결정화의 징조 + 균열의 에센스 5:5",
+    title: "Sinistral Crystallising Omen + Breach Essence 50:50",
     body: [
-      "좌측 결정화의 징조 + 균열의 에센스로 접두 하나를 날리고 최대 퀄리티 +20%를 붙인다.",
-      "분열 옵션은 안 지워지므로 잡옵션과 공격 1티어 중 하나가 5:5로 날아간다.",
+      "Use Sinistral Crystallising Omen + Breach Essence to remove one prefix and add Maximum Quality increased by +20%.",
+      "Since the fractured mod cannot be removed, either the junk mod or Tier 1 Attack will be wiped 50:50.",
     ],
     items: ["sinistralCrystal", "breachEssence"],
     next: [
-      { label: "잡옵션이 날아가면", to: "V3", ok: true },
-      { label: "공격 1티어가 날아가면", to: "B", ok: false },
+      { label: "If Junk Mod Wiped", to: "V3", ok: true },
+      { label: "If Tier 1 Attack Wiped", to: "B", ok: false },
     ],
     ring: {
-      quality: "퀄리티 0% (최대 40%)",
+      quality: "Quality 0% (Max 40%)",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
         { text: ATTACK_T1, kind: "gamble" },
-        { text: "정확도 +120", kind: "gamble", hint: "잡옵션" },
+        { text: "+120 to Accuracy Rating", kind: "gamble", hint: "Junk mod" },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "둘 중 하나가 5:5로 최대 퀄리티 +20%로 교체",
+      note: "One of the two is replaced by Maximum Quality +20% 50:50",
     },
   },
   {
     id: "V3",
-    title: "바로 강탈자 기폭제 퀄리티 40%",
+    title: "Apply Reaver Catalyst 40% Quality Immediately",
     body: [
-      "잡옵션이 날아갔으면 접두가 분열 옵션 + 공격 1티어 + 최대 퀄리티 +20%로 성공 경로 7번과 같은 상태다.",
-      "여기서 바로 강탈자 기폭제를 퀄리티 40%까지 바르고 마무리 단계(8번)로 진행한다.",
+      "If the junk mod was wiped, prefixes are Fractured mod + Tier 1 Attack + Maximum Quality +20%, matching success path step 7.",
+      "Apply Reaver Catalyst up to 40% quality right away and proceed to the finalization stage (step 8).",
     ],
     items: ["reaverCatalyst"],
-    next: [{ label: "40% 작업 후", to: "8", ok: true }],
+    next: [{ label: "After 40% Quality", to: "8", ok: true }],
     ring: {
-      quality: "퀄리티 40% (공격)",
+      quality: "Quality 40% (Attack)",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
         { text: ATTACK_T1 },
         { text: MAX_QUALITY, kind: "new" },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "잡옵션 → 최대 퀄리티 +20%, 퀄리티 40%",
+      note: "Junk mod → Max Quality +20%, Quality 40%",
     },
   },
 ];
@@ -463,39 +463,37 @@ const VARIANT_STEPS: Step[] = [
 const RECOVERY_STEPS: Step[] = [
   {
     id: "B",
-    title: "좌측 소멸의 징조 5:5 삭제 도박",
+    title: "Sinistral Annulment Omen 50:50 Removal Gamble",
     body: [
-      "좌측 소멸의 징조 + 소멸의 오브로 5:5 삭제 도박을 한다.",
-      "실패해도 괜찮다. 최대 퀄리티 +20%가 지워지더라도 4번(균열의 에센스) 작업으로 돌아가서 남은 실패 옵션을 교체하면 된다.",
+      "Perform a 50:50 removal gamble using Sinistral Annulment Omen + Orb of Annulment.",
+      "Don't panic if it fails. Even if Maximum Quality +20% gets removed, you can return to step 4 (Breach Essence) and replace the remaining failed mod.",
     ],
     items: ["sinistralAnnul", "annul"],
-    branch: { label: "6번 실패", from: "6" },
+    branch: { label: "Step 6 Failure", from: "6" },
     next: [
-      { label: "실패한 옵션이 지워지면", to: "5", ok: true },
-      { label: "최대 퀄리티 +20%가 지워지면", to: "4", ok: false },
+      { label: "If Failed Mod Removed", to: "5", ok: true },
+      { label: "If Max Quality +20% Removed", to: "4", ok: false },
     ],
     ring: {
-      quality: "퀄리티 0%",
+      quality: "Quality 0%",
       prefixes: [
         { text: RARITY_P, kind: "fractured" },
         { text: MAX_QUALITY, kind: "gamble" },
-        { text: "생명력 최대치 +65", kind: "gamble", hint: "실패한 옵션" },
+        { text: "+65 to maximum Life", kind: "gamble", hint: "Failed mod" },
       ],
       suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, { text: ALL_RES }],
-      note: "분열 옵션은 안 지워지므로 나머지 둘 중 하나가 5:5로 삭제",
+      note: "Fractured mod is safe, one of the other two is removed 50:50",
     },
   },
 ];
 
-// 시작 베이스 경매장 검색 (카카오 경매장). 리그가 바뀌면 TRADE_LEAGUE만 바꾸면 된다.
 const TRADE_LEAGUE = "Forbidden Rites";
 const TRADE_BASE_URL = `https://poe.kakaogames.com/trade2/search/poe2/${encodeURIComponent(TRADE_LEAGUE)}/`;
 const TRADE_FILTER_CODE =
-  "H4sIAAAAAAAACo1QXWoCMRC-SpnnIOyuUM1VioSYTCCQbEIyEWUJ9LFHaE9Q-tZHz6T2DmXVlpUidF7m9_tm5hsgk6SSgQ8QItnQA4eMqiS5dgiVAe0iAoevt4_D_uXh-Pl6en8GdoZl4E_Dz4DsNTAw1hGmS8Nq4IDb6KyyNBsBols2j_PFspm3wGAjXcFxsbc98K6rlV1BMWPRYXZxoi9-jUkEI9BH2omY0Nit8EHnPyztf0lyMXdJmlpXdTV5ZqxnJSb5JFQhpRIJ9Y2GRrp81s8kqagk1MIS-psZSgWh1qvId-it27jfyxZtHe0byZ6TErYBAAA";
-// TRADE_FILTER_CODE를 풀어 쓴 검색 조건 (풀링크용).
+  "H4sIAAAAAAAACo1QXWoCMRC-SpnnIOyuUM1VioSYTCCQbEIyEWUJ9LFHaE9Q-tZHz6T2DmXVlpUidF7m9_tm5hsgk6SSgQ8QItnQA4eMqiS5dgiVAe0iAoevs4_D_uXh-Pl6en8GdoZl4E_Dz4DsNTAw1hGmS8Nq4IDb6KyyNBsBols2j_PFspm3wGAjXcFxsbc98K6rlV1BMWPRYXZxoi9-jUkEI9BH2omY0Nit8EHnPyztf0lyMXdJmlpXdTV5ZqxnJSb5JFQhpRIJ9Y2GRrp81s8kqagk1MIS-psZSgWh1qvId-it27jfyxZtHe0byZ6TeIBAAA";
 const TRADE_QUERY = {
   status: { option: "securable" },
-  type: "황금 반지",
+  type: "Gold Ring",
   stats: [
     {
       type: "and",
@@ -530,34 +528,33 @@ function BaseSearch() {
     <section className="guide-search">
       <h2 className="guide-search-title">
         <img src={GOLD_RING_ICON} alt="" width={36} height={36} />
-        베이스 검색
+        Base Search
       </h2>
-      <p>경매장에서 다음 검색 필터를 넣으면 됩니다.</p>
+      <p>Enter the following search filter on the trade site.</p>
       <div className="guide-search-code">
         <code>{TRADE_FILTER_CODE}</code>
         <button type="button" className="ghost" onClick={() => void copy()}>
-          {copied ? "복사됨" : "필터 복사"}
+          {copied ? "Copied" : "Copy Filter"}
         </button>
       </div>
       <p className="guide-search-note">
-        조건: 황금 반지 · 아이템 레벨 82 이상 · 발견하는 아이템 희귀도 합계 33% 이상 · 빈 접두 2칸 이상 · 빈 접미 1칸 이상 · 분열 아이템 · 타락
-        아님
+        Conditions: Gold Ring · Item Level 82+ · Total Item Rarity 33%+ · Empty Prefixes 2+ · Empty Suffixes 1+ · Fractured Item · Not Corrupted
       </p>
       <p className="guide-search-note">
-        이 필터는 베스트 베이스와 대체 베이스를 모두 찾는다 — 접미에 저항 1티어가 붙은 매물이 있으면 그걸 우선 구매.
+        This filter finds both best and alternative bases — prioritize buying ones with Tier 1 resistance on suffixes if available.
       </p>
       <a className="guide-search-go" href={TRADE_FULL_URL} target="_blank" rel="noreferrer">
-        필터 적용된 검색 바로 가기 →
+        Go to Trade Search with Filter Applied →
       </a>
     </section>
   );
 }
 
 const KIND_LABEL: Record<ModKind, string> = {
-  fractured: "분열",
-  desecrated: "훼손",
+  fractured: "Fractured",
+  desecrated: "Desecrated",
   new: "NEW",
-  gamble: "5:5",
+  gamble: "50:50",
 };
 
 function isVariant(id: StepId) {
@@ -612,28 +609,28 @@ export function EndIcon({ ok }: { ok: boolean }) {
 }
 
 function stepLabel(id: StepId) {
-  if (id === "start") return "시작";
-  if (id === "done") return "완성";
-  if (isRecovery(id)) return `복구 ${id}`;
-  if (isVariant(id)) return `변형 ${id.slice(1)}`;
-  if (isMake(id)) return `제작 ${id.slice(1)}`;
-  return `${id}번`;
+  if (id === "start") return "Start";
+  if (id === "done") return "Complete";
+  if (isRecovery(id)) return `Recovery ${id}`;
+  if (isVariant(id)) return `Variant ${id.slice(1)}`;
+  if (isMake(id)) return `Craft ${id.slice(1)}`;
+  return `Step ${id}`;
 }
 
 function stateLabel(id: StepId) {
-  if (id === "start") return "제작 전";
-  if (id === "done") return "완성";
-  if (isRecovery(id)) return `복구 ${id} 후`;
-  if (isVariant(id)) return `변형 ${id.slice(1)} 후`;
-  if (isMake(id)) return `베이스 제작 ${id.slice(1)} 후`;
-  return `${id}단계 후`;
+  if (id === "start") return "Pre-craft";
+  if (id === "done") return "Complete";
+  if (isRecovery(id)) return `After Recovery ${id}`;
+  if (isVariant(id)) return `After Variant ${id.slice(1)}`;
+  if (isMake(id)) return `After Base Craft ${id.slice(1)}`;
+  return `After Step ${id}`;
 }
 
 function ModLine({ mod }: { mod: Mod }) {
   if (!mod)
     return (
       <li className="ring-mod empty">
-        <span>빈 칸</span>
+        <span>Empty Slot</span>
       </li>
     );
   return (
@@ -649,7 +646,7 @@ export function RingPanel({
   ring,
   id,
   stateText,
-  itemName = "황금 반지",
+  itemName = "Gold Ring",
   itemIcon = GOLD_RING_ICON,
 }: {
   ring: RingState;
@@ -660,23 +657,23 @@ export function RingPanel({
 }) {
   const state = stateText ?? (id ? stateLabel(id) : "");
   return (
-    <div className="ring-panel" aria-label={`${state} 반지 상태 예시`}>
+    <div className="ring-panel" aria-label={`${state} ring state example`}>
       {ring.note && <p className="ring-title">{ring.note}</p>}
       <div className="ring-panel-head">
         <strong className="ring-name">
           <img src={itemIcon} alt="" width={28} height={28} loading="lazy" />
           {itemName}
         </strong>
-        <span>{state} · 예시값</span>
+        <span>{state} · Example</span>
       </div>
       {ring.quality && <p className="ring-quality">{ring.quality}</p>}
-      <p className="ring-group">접두</p>
+      <p className="ring-group">Prefixes</p>
       <ul>
         {ring.prefixes.map((mod, i) => (
           <ModLine key={i} mod={mod} />
         ))}
       </ul>
-      <p className="ring-group">접미</p>
+      <p className="ring-group">Suffixes</p>
       <ul>
         {ring.suffixes.map((mod, i) => (
           <ModLine key={i} mod={mod} />
@@ -696,10 +693,9 @@ export function RingGuide() {
   };
 
   const renderStep = (step: Step) => {
-    // 분기가 없는 성공 경로 단계는 바로 다음 단계로 가는 버튼을 자동으로 붙인다.
     const mainIndex = MAIN_STEPS.indexOf(step);
     const following = mainIndex >= 0 ? MAIN_STEPS[mainIndex + 1] : undefined;
-    const next = step.next ?? (following ? [{ label: "다음 단계", to: following.id, ok: true }] : undefined);
+    const next = step.next ?? (following ? [{ label: "Next Step", to: following.id, ok: true }] : undefined);
     const recovery = isRecovery(step.id);
     const variant = isVariant(step.id);
     const make = isMake(step.id);
@@ -717,7 +713,7 @@ export function RingGuide() {
 
     return (
       <li key={step.id} id={`guide-step-${step.id}`} className={classes}>
-        <span className="guide-step-no">{make ? step.id.slice(1) : recovery || variant ? step.id : step.id === "start" ? "시작" : step.id === "done" ? "완성" : step.id}</span>
+        <span className="guide-step-no">{make ? step.id.slice(1) : recovery || variant ? step.id : step.id === "start" ? "Start" : step.id === "done" ? "Done" : step.id}</span>
         <RingPanel ring={step.ring} id={step.id} />
         <div className="guide-step-body">
           <h3>
@@ -726,7 +722,7 @@ export function RingGuide() {
                 type="button"
                 className={`guide-back dest-${destKind(step.branch.from)}`}
                 onClick={() => goStep(step.branch!.from)}
-                title={`${stepLabel(step.branch.from)}(으)로 돌아가기`}
+                title={`Return to ${stepLabel(step.branch.from)}`}
               >
                 <span className="guide-go-icon">
                   <ArrowIcon back />
@@ -734,9 +730,9 @@ export function RingGuide() {
                 {step.branch.label}
               </button>
             )}
-            {recovery && <span className="guide-recovery-tag">복구 {step.id}</span>}
-            {variant && <span className="guide-variant-tag">변형 {step.id.slice(1)}</span>}
-            {make && <span className="guide-make-tag">제작 {step.id.slice(1)}</span>}
+            {recovery && <span className="guide-recovery-tag">Recovery {step.id}</span>}
+            {variant && <span className="guide-variant-tag">Variant {step.id.slice(1)}</span>}
+            {make && <span className="guide-make-tag">Craft {step.id.slice(1)}</span>}
             {step.title}
           </h3>
           <ul>
@@ -746,7 +742,7 @@ export function RingGuide() {
           </ul>
           {step.callout && (
             <p className="guide-key-note">
-              <strong>가장 중요</strong> {step.callout}
+              <strong>Crucial</strong> {step.callout}
             </p>
           )}
           {step.items.length > 0 && (
@@ -765,7 +761,7 @@ export function RingGuide() {
                 n.to === "end" ? (
                   <span key={n.label} className={`guide-go end ${n.ok ? "ok" : "fail"}`}>
                     <span className="guide-go-label">{n.label}</span>
-                    <span className="guide-go-dest">{n.endText ?? "끝"}</span>
+                    <span className="guide-go-dest">{n.endText ?? "End"}</span>
                     <span className="guide-go-icon">
                       <EndIcon ok={n.ok} />
                     </span>
@@ -776,7 +772,7 @@ export function RingGuide() {
                     type="button"
                     className={`guide-go dest-${destKind(n.to as StepId)}`}
                     onClick={() => goStep(n.to as StepId)}
-                    title={`${stepLabel(n.to as StepId)}(으)로 이동`}
+                    title={`Go to ${stepLabel(n.to as StepId)}`}
                   >
                     <span className="guide-go-label">{n.label}</span>
                     <span className="guide-go-dest">{stepLabel(n.to as StepId)}</span>
@@ -797,38 +793,37 @@ export function RingGuide() {
     <div className="page guide-page">
       <header className="hero">
         <div>
-          <p className="eyebrow">Path of Exile 2 · 제작 가이드</p>
-          <h1>풀매찬 반지 가이드</h1>
+          <p className="eyebrow">Path of Exile 2 · Crafting Guide</p>
+          <h1>Full Rarity Gold Ring Guide</h1>
           <p className="lede">
-            정정민의 풀매찬 반지 제작 순서. <strong>번호 단계(1~9)</strong>가 성공 경로이고, 실패하면 아래{" "}
-            <strong>복구 경로(복구 B)</strong>를 거쳐 다시 성공 경로로 돌아온다. 2번에서 접두에 공격 1티어가 같이 붙으면 <strong>변형 루트(변형 1~3)</strong>로 간다.
+            Step-by-step full rarity ring crafting. <strong>Numbered steps (1–9)</strong> are the success path. On failure, follow the{" "}
+            <strong>Recovery path (Recovery B)</strong> to rejoin the success path. If Tier 1 Attack hits alongside prefixes in step 2, branch to the <strong>Variant route (Variant 1–3)</strong>.
           </p>
         </div>
       </header>
 
       <p className="guide-legend">
-        왼쪽 반지 상태의 옵션·수치는 이해를 돕기 위한 <strong>예시값</strong>입니다. 실제 옵션과 수치는 다를 수 있습니다.
+        Modifiers and values on the ring examples are for <strong>demonstration purposes</strong>. Actual modifiers and ranges may vary.
       </p>
 
-      <h2 className="guide-section-title">필요한 베이스</h2>
+      <h2 className="guide-section-title">Required Bases</h2>
       <p className="guide-legend">
-        황금 반지 · 아이템 레벨 82 이상(그래야 저항 1티어가 뜬다). 접두에 분열된 발견하는 아이템 희귀도 증가, 접미에 발견하는 아이템
-        희귀도 증가가 공통이고, 접미 저항 1티어 유무로 시작 위치가 갈린다.
+        Gold Ring · Item Level 82+ (required for Tier 1 resistances). Fractured Item Rarity increased on prefix, and Item Rarity increased on suffix are common; starting point differs depending on whether a Tier 1 resistance suffix is present.
       </p>
       <div className="guide-base-shapes">
         <section className="guide-base-shape">
           <RingPanel
-            stateText="바로 구매"
+            stateText="Buy Ready"
             ring={{
               prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
               suffixes: [{ text: RARITY_S }, { text: FIRE_RES }, null],
-              note: "베스트 베이스 — 저항 1티어 포함",
+              note: "Best Base — Includes Tier 1 resistance",
             }}
           />
-          <p>접미에 저항 1티어까지 붙은 매물. 있으면 이걸 사서 성공 경로 처음부터 진행한다.</p>
+          <p>Base with Tier 1 resistance already on suffixes. Buy this if available and start from step 1 of the success path.</p>
           <button type="button" className="guide-go dest-main" onClick={() => goStep("start")}>
-            <span className="guide-go-label">베스트 베이스면</span>
-            <span className="guide-go-dest">시작</span>
+            <span className="guide-go-label">If Best Base</span>
+            <span className="guide-go-dest">Start</span>
             <span className="guide-go-icon">
               <ArrowIcon />
             </span>
@@ -836,17 +831,17 @@ export function RingGuide() {
         </section>
         <section className="guide-base-shape">
           <RingPanel
-            stateText="매물이 없을 때"
+            stateText="When Unavailable"
             ring={{
               prefixes: [{ text: RARITY_P, kind: "fractured" }, null, null],
               suffixes: [{ text: RARITY_S }, null, null],
-              note: "대체 베이스 — 저항 없음",
+              note: "Alternative Base — No resistance",
             }}
           />
-          <p>베스트 베이스 매물이 없을 때 사는 베이스. 베이스 만드는 법으로 접미를 채운 뒤 성공 경로 3번에 합류한다.</p>
+          <p>Base bought when the best base is unavailable. Fill suffixes using the base crafting steps, then join at step 3 of the success path.</p>
           <button type="button" className="guide-go dest-make" onClick={() => goStep("M1")}>
-            <span className="guide-go-label">대체 베이스면</span>
-            <span className="guide-go-dest">제작 1</span>
+            <span className="guide-go-label">If Alternative Base</span>
+            <span className="guide-go-dest">Craft 1</span>
             <span className="guide-go-icon">
               <ArrowIcon />
             </span>
@@ -856,22 +851,21 @@ export function RingGuide() {
 
       <BaseSearch />
 
-      <h2 className="guide-section-title make">베이스 만드는 법 — 대체 베이스용</h2>
+      <h2 className="guide-section-title make">Base Crafting — For Alternative Bases</h2>
       <p className="guide-legend">
-        베스트 베이스 매물이 없을 때, 대체 베이스(저항 없음)의 접미를 직접 채우는 방법입니다. 끝나면 접미가 성공 경로 2번을 마친 상태와
-        같아지므로 1·2번을 건너뛰고 3번으로 합류합니다.
+        How to manually fill the suffixes of an alternative base (without resistance) when the best base isn't listed. Once finished, suffixes match the state after completing step 2 of the success path, allowing you to skip steps 1 & 2 and join at step 3.
       </p>
       <ol className="guide-steps">{MAKE_STEPS.map(renderStep)}</ol>
 
-      <h2 className="guide-section-title">성공 경로 — 베스트 베이스부터</h2>
+      <h2 className="guide-section-title">Success Path — Starting from Best Base</h2>
       <ol className="guide-steps">{MAIN_STEPS.map(renderStep)}</ol>
 
-      <h2 className="guide-section-title variant">변형 루트</h2>
-      <p className="guide-legend">2번에서 접두에 공격 1티어가 같이 붙었을 때 쓰는 지름길입니다.</p>
+      <h2 className="guide-section-title variant">Variant Route</h2>
+      <p className="guide-legend">A shortcut used when Tier 1 Attack hits alongside prefixes in step 2.</p>
       <ol className="guide-steps">{VARIANT_STEPS.map(renderStep)}</ol>
 
-      <h2 className="guide-section-title recovery">실패 복구 경로</h2>
-      <p className="guide-legend">실패했을 때만 거치는 단계입니다. 끝나면 아래 버튼으로 성공 경로에 다시 합류합니다.</p>
+      <h2 className="guide-section-title recovery">Failure Recovery Path</h2>
+      <p className="guide-legend">Steps taken only upon failure. Use the button below to rejoin the success path once completed.</p>
       <ol className="guide-steps">{RECOVERY_STEPS.map(renderStep)}</ol>
     </div>
   );
