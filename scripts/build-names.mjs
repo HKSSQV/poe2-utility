@@ -1,3 +1,5 @@
+// build-names.mjs
+
 const TYPES = [
   "Currency",
   "Fragments",
@@ -15,24 +17,25 @@ const TYPES = [
   "Verisium",
 ];
 
+// Используем стандартные (английские) версии страниц без /kr/
 const DB_PAGES = [
-  "https://poe2db.tw/kr/Economy",
-  "https://poe2db.tw/kr/Economy_Fragments",
-  "https://poe2db.tw/kr/Economy_Ritual",
-  "https://poe2db.tw/kr/Economy_Essences",
-  "https://poe2db.tw/kr/Economy_Breach",
-  "https://poe2db.tw/kr/Economy_Delirium",
-  "https://poe2db.tw/kr/Economy_Expedition",
-  "https://poe2db.tw/kr/Economy_Runes",
-  "https://poe2db.tw/kr/Economy_SoulCores",
-  "https://poe2db.tw/kr/Economy_Soul_Cores",
-  "https://poe2db.tw/kr/Economy_Idols",
-  "https://poe2db.tw/kr/Economy_Gems",
-  "https://poe2db.tw/kr/Economy_Uncut_Gems",
-  "https://poe2db.tw/kr/Economy_Lineage_Supports",
-  "https://poe2db.tw/kr/Economy_Abyss",
-  "https://poe2db.tw/kr/Economy_Verisium",
-  "https://poe2db.tw/kr/Currency_Exchange",
+  "https://poe2db.tw/Economy",
+  "https://poe2db.tw/Economy_Fragments",
+  "https://poe2db.tw/Economy_Ritual",
+  "https://poe2db.tw/Economy_Essences",
+  "https://poe2db.tw/Economy_Breach",
+  "https://poe2db.tw/Economy_Delirium",
+  "https://poe2db.tw/Economy_Expedition",
+  "https://poe2db.tw/Economy_Runes",
+  "https://poe2db.tw/Economy_SoulCores",
+  "https://poe2db.tw/Economy_Soul_Cores",
+  "https://poe2db.tw/Economy_Idols",
+  "https://poe2db.tw/Economy_Gems",
+  "https://poe2db.tw/Economy_Uncut_Gems",
+  "https://poe2db.tw/Economy_Lineage_Supports",
+  "https://poe2db.tw/Economy_Abyss",
+  "https://poe2db.tw/Economy_Verisium",
+  "https://poe2db.tw/Currency_Exchange",
 ];
 
 const SKIP_SLUGS = new Set([
@@ -54,11 +57,12 @@ const SKIP_SLUGS = new Set([
   "currency",
 ]);
 
+// Нормализация для английского языка (убрали диапазон корейских символов 가-힣)
 function norm(value) {
   return String(value)
     .toLowerCase()
     .replace(/['’]/g, "")
-    .replace(/[^a-z0-9가-힣]+/g, "");
+    .replace(/[^a-z0-9]+/g, "");
 }
 
 async function fetchText(url) {
@@ -74,7 +78,8 @@ async function fetchText(url) {
 
 function addName(names, slug, label) {
   const clean = label.replace(/\s+Wiki$/u, "").trim();
-  if (!clean || SKIP_SLUGS.has(slug.toLowerCase()) || !/[가-힣]/.test(clean)) return;
+  // Убрали проверку на [가-힣], теперь просто проверяем наличие текста
+  if (!clean || SKIP_SLUGS.has(slug.toLowerCase())) return;
   names.set(norm(slug), clean);
   names.set(norm(slug.replaceAll("_", " ")), clean);
   names.set(norm(slug.replaceAll("_", "-")), clean);
@@ -82,11 +87,15 @@ function addName(names, slug, label) {
 
 function parseDbNames(html) {
   const names = new Map();
+  
+  // Парсим пары с Wiki (убран корейский префикс /kr/)
   const wikiPairs = html.matchAll(/>([^<>]{2,80})<\/a>\s*<a href="([^"#?]+)"[^>]*>Wiki<\/a>/gi);
   for (const match of wikiPairs) {
-    addName(names, decodeURIComponent(match[2].replace(/^\/kr\//, "")), match[1]);
+    addName(names, decodeURIComponent(match[2].replace(/^\//, "")), match[1]);
   }
-  const direct = html.matchAll(/href="(?:\/kr\/)?([^"#?]+)"[^>]*>([^<]{2,80})</gi);
+  
+  // Прямой парсинг ссылок
+  const direct = html.matchAll(/href="([^"#?]+)"[^>]*>([^<]{2,80})</gi);
   for (const match of direct) {
     addName(names, decodeURIComponent(match[1]), match[2]);
   }
@@ -123,18 +132,20 @@ async function main() {
     if (!item?.id || seen.has(item.id)) continue;
     seen.add(item.id);
     const keys = [item.id, item.detailsId, item.name, item.name?.replaceAll(" ", "_"), item.detailsId?.replaceAll("-", "_")];
-    const ko = keys.map((key) => (key ? dbNames.get(norm(key)) : undefined)).find(Boolean);
-    if (ko) {
-      names[item.id] = ko;
-      if (item.detailsId) names[item.detailsId] = ko;
-      names[norm(item.name)] = ko;
+    
+    // Ищем английское название по нормализованным ключам
+    const englishName = keys.map((key) => (key ? dbNames.get(norm(key)) : undefined)).find(Boolean);
+    if (englishName) {
+      names[item.id] = englishName;
+      if (item.detailsId) names[item.detailsId] = englishName;
+      names[norm(item.name)] = englishName;
       hit += 1;
     } else {
       missed.push(`${item.id} | ${item.name}`);
     }
   }
 
-  const source = `// Generated from poe.ninja ids + poe2db.kr names.\nexport const NAMES: Record<string, string> = ${JSON.stringify(names, null, 2)};\n`;
+  const source = `// Generated from poe.ninja ids + poe2db.tw names (English).\nexport const NAMES: Record<string, string> = ${JSON.stringify(names, null, 2)};\n`;
   await import("node:fs/promises").then((fs) => fs.writeFile(new URL("../src/names.generated.ts", import.meta.url), source, "utf8"));
   console.log(`matched ${hit}/${seen.size}, missed ${missed.length}`);
   console.log(missed.slice(0, 40).join("\n"));
