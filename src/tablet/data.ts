@@ -20,7 +20,7 @@ export function getModByRef(ref: ModRef): TabletMod | undefined {
 
 export function suffixesForTabletType(tabletTypeId: number | null): TabletMod[] {
   if (tabletTypeId == null) return [];
-  // 공통 접미(tablet_type_id 없음)는 모든 서판 종류에 붙는다.
+  // Common suffixes (tablet_type_id is null) apply to all tablet types.
   return suffixOptions.filter((item) => item.tablet_type_id === tabletTypeId || item.tablet_type_id == null);
 }
 
@@ -31,7 +31,7 @@ export function suffixesForFilter(filter: number | "all"): TabletMod[] {
 
 export function tabletTypeName(tabletTypeId: number | null | undefined): string {
   if (tabletTypeId == null) return "";
-  return tabletTypes.find((item) => item.id === tabletTypeId)?.name_ko ?? "";
+  return tabletTypes.find((item) => item.id === tabletTypeId)?.name ?? "";
 }
 
 export function filterModsByQuery(mods: TabletMod[], query: string): TabletMod[] {
@@ -39,7 +39,7 @@ export function filterModsByQuery(mods: TabletMod[], query: string): TabletMod[]
   if (!q) return mods;
   return mods.filter(
     (item) =>
-      item.text_ko.toLowerCase().includes(q) ||
-      item.pattern_ko.toLowerCase().includes(q),
+      item.text.toLowerCase().includes(q) ||
+      item.pattern.toLowerCase().includes(q),
   );
 }
