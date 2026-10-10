@@ -4,7 +4,7 @@ import { getLeagues } from "../api";
 const STORAGE_LEAGUE = "poe2-exchange.league";
 const FALLBACK = "Forbidden Rites";
 
-/** 경매장 검색 링크에 넣을 리그 — 교환비 페이지에서 고른 리그, 없으면 현재 메인 리그. */
+/** League to use for trade search links — selected league from the exchange page, or current main league as fallback. */
 export function useTradeLeague(): string {
   const [league, setLeague] = useState(() => {
     try {
@@ -27,7 +27,7 @@ export function useTradeLeague(): string {
     return () => {
       alive = false;
     };
-    // 처음 한 번만 확인한다.
+    // Check only once on mount.
   }, []);
 
   return league;
