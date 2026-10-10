@@ -3,65 +3,65 @@
     {
       "id": 1,
       "code": "irradiated",
-      "name_ko": "방사능 노출",
-      "pattern_ko": "사능",
-      "trade_ko": "방사능 노출 서판",
+      "name": "Irradiated",
+      "pattern": "Irradi",
+      "tradeName": "Irradiated Tablet",
       "icon": "PrecursorTabletGeneric"
     },
     {
       "id": 7,
       "code": "temple",
-      "name_ko": "사원",
-      "pattern_ko": "사원",
-      "trade_ko": "사원 서판",
+      "name": "Temple",
+      "pattern": "Temple",
+      "tradeName": "Temple Tablet",
       "icon": "PrecursorTabletIncursion"
     },
     {
       "id": 2,
       "code": "breach",
-      "name_ko": "균열",
-      "pattern_ko": "균열",
-      "trade_ko": "균열 서판",
+      "name": "Breach",
+      "pattern": "Breach",
+      "tradeName": "Breach Tablet",
       "icon": "PrecursorTabletBreach"
     },
     {
       "id": 3,
       "code": "expedition",
-      "name_ko": "탐험",
-      "pattern_ko": "탐험",
-      "trade_ko": "탐험 서판",
+      "name": "Expedition",
+      "pattern": "Expedit",
+      "tradeName": "Expedition Tablet",
       "icon": "PrecursorTabletExpedition"
     },
     {
       "id": 4,
       "code": "delirium",
-      "name_ko": "환영",
-      "pattern_ko": "환영",
-      "trade_ko": "환영 서판",
+      "name": "Delirium",
+      "pattern": "Delir",
+      "tradeName": "Delirium Tablet",
       "icon": "PrecursorTabletDelirium"
     },
     {
       "id": 5,
       "code": "ritual",
-      "name_ko": "의식",
-      "pattern_ko": "의식",
-      "trade_ko": "의식 서판",
+      "name": "Ritual",
+      "pattern": "Ritual",
+      "tradeName": "Ritual Tablet",
       "icon": "PrecursorTabletRitual"
     },
     {
       "id": 6,
       "code": "overseer",
-      "name_ko": "감독관",
-      "pattern_ko": "감독",
-      "trade_ko": "감독관 서판",
+      "name": "Overseer",
+      "pattern": "Overseer",
+      "tradeName": "Overseer Tablet",
       "icon": "PrecursorTabletBoss"
     },
     {
       "id": 13,
       "code": "abyss",
-      "name_ko": "심연",
-      "pattern_ko": "심연",
-      "trade_ko": "심연 서판",
+      "name": "Abyss",
+      "pattern": "Abyss",
+      "tradeName": "Abyss Tablet",
       "icon": "PrecursorTabletAbyss"
     }
   ],
@@ -69,92 +69,92 @@
     {
       "id": 1,
       "tablet_type_id": null,
-      "text_ko": "지도에서 발견하는 아이템 희귀도 (8–12)% 증가",
-      "pattern_ko": "견.*희",
+      "text": "Item Rarity in Maps increased by (8–12)%",
+      "pattern": "Rarity",
       "type": "prefix"
     },
     {
       "id": 2,
       "tablet_type_id": null,
-      "text_ko": "지도 내 무리 규모 (5–7)% 증가",
-      "pattern_ko": "내.무.*증",
+      "text": "Pack Size in Maps increased by (5–7)%",
+      "pattern": "Pack Size",
       "type": "prefix"
     },
     {
       "id": 3,
       "tablet_type_id": null,
-      "text_ko": "지도에 마법 몬스터 (30–40)% 증가",
-      "pattern_ko": "법.몬",
+      "text": "Magic Monsters in Maps increased by (30–40)%",
+      "pattern": "Magic Monsters",
       "type": "prefix"
     },
     {
       "id": 4,
       "tablet_type_id": null,
-      "text_ko": "지도에 희귀 몬스터 수 (25–35)% 증가",
-      "pattern_ko": "터.수",
+      "text": "Rare Monsters in Maps increased by (25–35)%",
+      "pattern": "Rare Monsters",
       "type": "prefix"
     },
     {
       "id": 100,
       "tablet_type_id": null,
-      "text_ko": "지도의 몬스터 희귀도 (15–20)% 증가",
-      "pattern_ko": "도의.몬",
+      "text": "Monster Rarity in Maps increased by (15–20)%",
+      "pattern": "Monster Rarity",
       "type": "prefix"
     },
     {
       "id": 5,
       "tablet_type_id": null,
-      "text_ko": "지도에서 발견하는 골드 (25–35)% 증가",
-      "pattern_ko": "골드",
+      "text": "Gold found in Maps increased by (25–35)%",
+      "pattern": "Gold found",
       "type": "prefix"
     },
     {
       "id": 6,
       "tablet_type_id": null,
-      "text_ko": "지도 내 경험치 획득 (12–18)% 증가",
-      "pattern_ko": "치.획",
+      "text": "Experience gain in Maps increased by (12–18)%",
+      "pattern": "Experience",
       "type": "prefix"
     },
     {
       "id": 101,
       "tablet_type_id": null,
-      "text_ko": "지도에 희귀 상자 (2–3)개 추가 등장",
-      "pattern_ko": "귀.상",
+      "text": "Maps contain (2–3) additional Rare Chests",
+      "pattern": "Rare Chests",
       "type": "prefix"
     },
     {
       "id": 71,
       "tablet_type_id": null,
-      "text_ko": "몬스터의 효율 (10–15)% 증가",
-      "pattern_ko": "^몬",
+      "text": "Monster Efficiency in Maps increased by (10–15)%",
+      "pattern": "Efficiency",
       "type": "prefix"
     },
     {
       "id": 102,
       "tablet_type_id": null,
-      "text_ko": "지도에 소환의 원 1개 추가 등장",
-      "pattern_ko": "원.*추",
+      "text": "Maps contain 1 additional Circle of Summoning",
+      "pattern": "Circle of Summoning",
       "type": "prefix"
     },
     {
       "id": 103,
       "tablet_type_id": null,
-      "text_ko": "지도에 에센스 1개 추가 등장 (숨은 효과: 경로석 수량 증가)",
-      "pattern_ko": "센.*추",
+      "text": "Maps contain 1 additional Essence (Hidden effect: Waystone quantity increase)",
+      "pattern": "Essence",
       "type": "prefix"
     },
     {
       "id": 104,
       "tablet_type_id": null,
-      "text_ko": "지도에 아즈메리 혼백 1개 추가 등장 (숨은 효과: 경로석 수량 증가)",
-      "pattern_ko": "혼.*추",
+      "text": "Maps contain 1 additional Azmeri Wisp (Hidden effect: Waystone quantity increase)",
+      "pattern": "Azmeri Wisp",
       "type": "prefix"
     },
     {
       "id": 105,
       "tablet_type_id": null,
-      "text_ko": "지도에 탈주 유배자 추가 1명이 서식 (숨은 효과: 경로석 수량 증가)",
-      "pattern_ko": "서식",
+      "text": "Maps inhabit 1 additional Rogue Exile (Hidden effect: Waystone quantity increase)",
+      "pattern": "Rogue Exile",
       "type": "prefix"
     }
   ],
@@ -162,512 +162,512 @@
     {
       "id": 66,
       "tablet_type_id": null,
-      "text_ko": "지도에서 발견하는 경로석 수량 (30–40)% 증가",
-      "pattern_ko": "석.수",
+      "text": "Waystone quantity found in Maps increased by (30–40)%",
+      "pattern": "Waystone quantity",
       "type": "suffix"
     },
     {
       "id": 10,
       "tablet_type_id": null,
-      "text_ko": "지도에 성소가 등장할 확률 (70–100)% 증가",
-      "pattern_ko": "소가.등",
+      "text": "Probability for Shrines to appear in Maps increased by (70–100)%",
+      "pattern": "Shrines",
       "type": "suffix"
     },
     {
       "id": 11,
       "tablet_type_id": null,
-      "text_ko": "지도에 금고가 등장할 확률 (70–100)% 증가",
-      "pattern_ko": "고가",
+      "text": "Probability for Strongboxes to appear in Maps increased by (70–100)%",
+      "pattern": "Strongboxes",
       "type": "suffix"
     },
     {
       "id": 12,
       "tablet_type_id": null,
-      "text_ko": "지도에 에센스가 등장할 확률 (70–100)% 증가",
-      "pattern_ko": "스가.등",
+      "text": "Probability for Essences to appear in Maps increased by (70–100)%",
+      "pattern": "Essences",
       "type": "suffix"
     },
     {
       "id": 106,
       "tablet_type_id": null,
-      "text_ko": "지도에 아즈메리 혼백이 등장할 확률 (70–100)% 증가",
-      "pattern_ko": "백이",
+      "text": "Probability for Azmeri Wisps to appear in Maps increased by (70–100)%",
+      "pattern": "Azmeri Wisps",
       "type": "suffix"
     },
     {
       "id": 107,
       "tablet_type_id": null,
-      "text_ko": "지도에 탈주 유배자가 등장할 확률 (70–100)% 증가",
-      "pattern_ko": "배자가",
+      "text": "Probability for Rogue Exiles to appear in Maps increased by (70–100)%",
+      "pattern": "Rogue Exiles",
       "type": "suffix"
     },
     {
       "id": 108,
       "tablet_type_id": null,
-      "text_ko": "지도에 소환의 원이 등장할 확률 (70–100)% 증가",
-      "pattern_ko": "원이",
+      "text": "Probability for Circles of Summoning to appear in Maps increased by (70–100)%",
+      "pattern": "Circles of Summoning",
       "type": "suffix"
     },
     {
       "id": 109,
       "tablet_type_id": null,
-      "text_ko": "지도에 성소 1개 추가 등장 (숨은 효과: 경로석 수량 증가, 무리 규모 감소)",
-      "pattern_ko": "성소.*추",
+      "text": "Maps contain 1 additional Shrine (Hidden effect: Waystone quantity increase, Pack size decrease)",
+      "pattern": "additional Shrine",
       "type": "suffix"
     },
     {
       "id": 110,
       "tablet_type_id": null,
-      "text_ko": "지도에 금고 1개 추가 등장 (숨은 효과: 경로석 수량 증가, 무리 규모 감소)",
-      "pattern_ko": "금고.*추",
+      "text": "Maps contain 1 additional Strongbox (Hidden effect: Waystone quantity increase, Pack size decrease)",
+      "pattern": "additional Strongbox",
       "type": "suffix"
     },
     {
       "id": 81,
       "tablet_type_id": null,
-      "text_ko": "지도에 무작위 속성 부여 (1–2)개 추가",
-      "pattern_ko": "작위.속",
+      "text": "Maps contain (1–2) additional random modifiers",
+      "pattern": "additional random modifiers",
       "type": "suffix"
     },
     {
       "id": 82,
       "tablet_type_id": null,
-      "text_ko": "고유 몬스터가 속성 1개 추가 보유",
-      "pattern_ko": "가.보유",
+      "text": "Unique Monsters have 1 additional modifier",
+      "pattern": "additional modifier",
       "type": "suffix"
     },
     {
       "id": 111,
       "tablet_type_id": 7,
-      "text_ko": "지도 내 바알 등대 주위의 몬스터 무리 규모 (10–30)% 증가",
-      "pattern_ko": "위의",
+      "text": "Monster pack size near Vaal Beacons in Maps increased by (10–30)%",
+      "pattern": "Vaal Beacons",
       "type": "suffix"
     },
     {
       "id": 112,
       "tablet_type_id": 7,
-      "text_ko": "지도 내 바알 등대 주위에 몬스터 무리 1개 추가 등장",
-      "pattern_ko": "무리.1",
+      "text": "Maps contain 1 additional monster pack near Vaal Beacons",
+      "pattern": "additional monster pack",
       "type": "suffix"
     },
     {
       "id": 113,
       "tablet_type_id": 7,
-      "text_ko": "(30–60)% 확률로 지도 내 바알 등대 주위에 몬스터 무리 추가 등장",
-      "pattern_ko": "무리.추",
+      "text": "(30–60)% chance for Maps to contain additional monster packs near Vaal Beacons",
+      "pattern": "chance for Maps to contain",
       "type": "suffix"
     },
     {
       "id": 114,
       "tablet_type_id": 7,
-      "text_ko": "지도 내 바알 등대가 추가 몬스터를 소환할 확률 (25–50)% 증가",
-      "pattern_ko": "환할",
+      "text": "Probability for Vaal Beacons in Maps to summon additional monsters increased by (25–50)%",
+      "pattern": "summon additional",
       "type": "suffix"
     },
     {
       "id": 115,
       "tablet_type_id": 7,
-      "text_ko": "지도 내 바알 등대에서 (5–10)% 확률로 수정 1개 추가 획득",
-      "pattern_ko": "수정",
+      "text": "(5–10)% chance to find 1 additional Shard from Vaal Beacons in Maps",
+      "pattern": "additional Shard",
       "type": "suffix"
     },
     {
       "id": 116,
       "tablet_type_id": 7,
-      "text_ko": "(10–25)% 확률로 지도에 바알 등대 고유 몬스터 추가",
-      "pattern_ko": "대.고",
+      "text": "(10–25)% chance for Maps to contain Vaal Beacon Unique Monsters",
+      "pattern": "Unique Monsters",
       "type": "suffix"
     },
     {
       "id": 117,
       "tablet_type_id": 7,
-      "text_ko": "지도 내 바알 등대 상자가 희귀 등급일 확률 (30–60)% 증가",
-      "pattern_ko": "상자가",
+      "text": "Probability for Vaal Beacon Chests in Maps to be Rare increased by (30–60)%",
+      "pattern": "Beacon Chests",
       "type": "suffix"
     },
     {
       "id": 118,
       "tablet_type_id": 2,
-      "text_ko": "지도에서 발견하는 벌레집 피 수량 (30–60)% 증가",
-      "pattern_ko": "벌레",
+      "text": "Maggot Pit blood quantity found in Maps increased by (30–60)%",
+      "pattern": "Maggot Pit",
       "type": "suffix"
     },
     {
       "id": 119,
       "tablet_type_id": 2,
-      "text_ko": "지도에서 발견하는 생명의 결실 수량 (30–60)% 증가",
-      "pattern_ko": "실.수",
+      "text": "Fruit of Life quantity found in Maps increased by (30–60)%",
+      "pattern": "Fruit of Life",
       "type": "suffix"
     },
     {
       "id": 120,
       "tablet_type_id": 2,
-      "text_ko": "지도에서 생명의 결실이 (10–30)% 확률로 1레벨 높게 떨어짐",
-      "pattern_ko": "높게",
+      "text": "(10–30)% chance for Fruit of Life in Maps to drop 1 level higher",
+      "pattern": "1 level higher",
       "type": "suffix"
     },
     {
       "id": 121,
       "tablet_type_id": 2,
-      "text_ko": "지도 내 균열에 제쉬트의 총사령관 브룬이 등장할 확률 (20–50)% 증가",
-      "pattern_ko": "브룬",
+      "text": "Probability for Grand Commander Brutus of Jesh to appear in Breaches in Maps increased by (20–50)%",
+      "pattern": "Brutus of Jesh",
       "type": "suffix"
     },
     {
       "id": 122,
       "tablet_type_id": 2,
-      "text_ko": "지도 내 불안정한 균열이 안정화되면 희귀 몬스터 (1–2)마리를 추가로 생성함",
-      "pattern_ko": "안정",
+      "text": "When unstable Breaches in Maps stabilize, spawn (1–2) additional Rare Monsters",
+      "pattern": "unstable Breaches",
       "type": "suffix"
     },
     {
       "id": 123,
       "tablet_type_id": 2,
-      "text_ko": "지도 내 희귀 균열 몬스터의 효율 (5–20)% 증가",
-      "pattern_ko": "열.몬",
+      "text": "Rare Breach Monster efficiency in Maps increased by (5–20)%",
+      "pattern": "Rare Breach Monster",
       "type": "suffix"
     },
     {
       "id": 23,
       "tablet_type_id": 2,
-      "text_ko": "지도 내 균열의 무리 규모 (5–15)% 증가",
-      "pattern_ko": "균열의",
+      "text": "Breach pack size in Maps increased by (5–15)%",
+      "pattern": "Breach pack size",
       "type": "suffix"
     },
     {
       "id": 124,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 탐험 폭발물 효과 범위 (5–10)% 증가",
-      "pattern_ko": "발물",
+      "text": "Expedition explosive area of effect in Maps increased by (5–10)%",
+      "pattern": "explosive area",
       "type": "suffix"
     },
     {
       "id": 34,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 룬 몬스터가 떨어뜨리는 탐험 일지의 수량 (15–25)% 증가",
-      "pattern_ko": "일지",
+      "text": "Quantity of Expedition Logbooks dropped by Runic Monsters in Maps increased by (15–25)%",
+      "pattern": "Logbooks",
       "type": "suffix"
     },
     {
       "id": 37,
       "tablet_type_id": 3,
-      "text_ko": "지도에 룬 몬스터 표시물 수량 (15–25)% 증가",
-      "pattern_ko": "시물",
+      "text": "Quantity of Runic Monster markers in Maps increased by (15–25)%",
+      "pattern": "Runic Monster markers",
       "type": "suffix"
     },
     {
       "id": 125,
       "tablet_type_id": 3,
-      "text_ko": "베리시움 유적의 몬스터가 떨어뜨리는 베리시움 (15–25)% 증가",
-      "pattern_ko": "적의.몬",
+      "text": "Verisium dropped by monsters in Verisium Ruins increased by (15–25)%",
+      "pattern": "Verisium Ruins",
       "type": "suffix"
     },
     {
       "id": 126,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 처음으로 발굴되는 룬 몬스터 (1–2)마리가 희귀 몬스터",
-      "pattern_ko": "발굴",
+      "text": "(1–2) Runic Monsters excavated first in Maps are Rare Monsters",
+      "pattern": "excavated first",
       "type": "suffix"
     },
     {
       "id": 127,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 탐험에 베리시움 보초 (1–2)마리 추가 등장",
-      "pattern_ko": "보초",
+      "text": "Expeditions in Maps contain (1–2) additional Verisium Sentinels",
+      "pattern": "Verisium Sentinels",
       "type": "suffix"
     },
     {
       "id": 128,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 탐험 몬스터 희귀도 (15–25)% 증가",
-      "pattern_ko": "험.몬",
+      "text": "Expedition Monster rarity in Maps increased by (15–25)%",
+      "pattern": "Expedition Monster rarity",
       "type": "suffix"
     },
     {
       "id": 129,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 탐험에 얼음에 뒤덮인 보스 (1–2)마리 추가 등장",
-      "pattern_ko": "얼음",
+      "text": "Expeditions in Maps contain (1–2) additional Ice-bound Bosses",
+      "pattern": "Ice-bound Bosses",
       "type": "suffix"
     },
     {
       "id": 130,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 탐험에 묻힌 금고 (1–2)개 등장",
-      "pattern_ko": "묻힌",
+      "text": "Expeditions in Maps contain (1–2) buried Strongboxes",
+      "pattern": "buried Strongboxes",
       "type": "suffix"
     },
     {
       "id": 131,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 탐험에 바알 유물 (1–2)개 추가 등장",
-      "pattern_ko": "유물",
+      "text": "Expeditions in Maps contain (1–2) additional Vaal Relics",
+      "pattern": "Vaal Relics",
       "type": "suffix"
     },
     {
       "id": 132,
       "tablet_type_id": 3,
-      "text_ko": "탐험에 +(30–40)% 초과 확률로 베리시움 유적 1개 추가 등장",
-      "pattern_ko": "적.1",
+      "text": "+(30–40)% chance for Expeditions to contain 1 additional Verisium Ruin",
+      "pattern": "additional Verisium Ruin",
       "type": "suffix"
     },
     {
       "id": 133,
       "tablet_type_id": 3,
-      "text_ko": "탐험이 +(30–40)% 초과 확률로 지도 내 룬 몬스터 복제",
-      "pattern_ko": "터.복",
+      "text": "+(30–40)% chance for Expeditions to duplicate Runic Monsters in Maps",
+      "pattern": "duplicate Runic Monsters",
       "type": "suffix"
     },
     {
       "id": 134,
       "tablet_type_id": 3,
-      "text_ko": "지도 내 베리시움 유적이 추가 룬 속성을 추가할 확률 +(25–35)%",
-      "pattern_ko": "룬.속",
+      "text": "Probability for Verisium Ruins in Maps to add additional Rune modifiers +(25–35)%",
+      "pattern": "Rune modifiers",
       "type": "suffix"
     },
     {
       "id": 38,
       "tablet_type_id": 4,
-      "text_ko": "지도에서 발견하는 복제된 영토 파편의 중첩 개수 (15–30)% 증가",
-      "pattern_ko": "중첩",
+      "text": "Stack size of Simulacrum Splinters found in Maps increased by (15–30)%",
+      "pattern": "Simulacrum Splinters",
       "type": "suffix"
     },
     {
       "id": 40,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 안개가 (6–12)초 추가로 지속되고 사라짐",
-      "pattern_ko": "지속",
+      "text": "Delirium fog lasts for an additional (6–12) seconds before dissipating in Maps",
+      "pattern": "Delirium fog lasts",
       "type": "suffix"
     },
     {
       "id": 41,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 안개가 (20–30)% 더 느리게 사라짐",
-      "pattern_ko": "느리",
+      "text": "Delirium fog dissipates (20–30)% slower in Maps",
+      "pattern": "dissipates slower",
       "type": "suffix"
     },
     {
       "id": 135,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 안개가 플레이어에게 적용하는 환영 (15–30)% 증가",
-      "pattern_ko": "플레",
+      "text": "Delirium applied to the player by Delirium fog in Maps increased by (15–30)%",
+      "pattern": "applied to the player",
       "type": "suffix"
     },
     {
       "id": 43,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 몬스터의 무리 규모 (15–30)% 증가",
-      "pattern_ko": "영.몬",
+      "text": "Delirium Monster pack size in Maps increased by (15–30)%",
+      "pattern": "Delirium Monster pack size",
       "type": "suffix"
     },
     {
       "id": 44,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 안개에서 생성되는 분열의 거울 (15–30)% 증가",
-      "pattern_ko": "분열",
+      "text": "Mirrors of Delirium generated in Delirium fog in Maps increased by (15–30)%",
+      "pattern": "Mirrors of Delirium",
       "type": "suffix"
     },
     {
       "id": 45,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 희귀 몬스터 처치 시 환영 거울 타이머 (3–5)초 동안 일시 정지",
-      "pattern_ko": "이머",
+      "text": "Killing Rare Monsters pauses the Delirium mirror timer for (3–5) seconds in Maps",
+      "pattern": "pauses the Delirium",
       "type": "suffix"
     },
     {
       "id": 46,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 인카운터의 고유 보스 등장 확률 (15–30)% 증폭",
-      "pattern_ko": "유.보",
+      "text": "Unique Boss encounter probability for Delirium encounters in Maps amplified by (15–30)%",
+      "pattern": "Unique Boss encounter probability",
       "type": "suffix"
     },
     {
       "id": 136,
       "tablet_type_id": 4,
-      "text_ko": "지도 내 환영 안개에서 생성되는 거울 파편 (12–26)% 증가",
-      "pattern_ko": "울.파",
+      "text": "Mirror Shards generated from Delirium fog in Maps increased by (12–26)%",
+      "pattern": "Mirror Shards",
       "type": "suffix"
     },
     {
       "id": 8,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에서 희생되는 몬스터가 주는 공물 점수 (18–30)% 증가",
-      "pattern_ko": "희생",
+      "text": "Tribute score granted by monsters sacrificed at Ritual Altars in Maps increased by (18–30)%",
+      "pattern": "Tribute score",
       "type": "suffix"
     },
     {
       "id": 49,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에서 헌정품을 무작위 변경하는 데 소모되는 공물 점수 (20–30)% 감소",
-      "pattern_ko": "변.*데",
+      "text": "Tribute cost to reroll Favours at Ritual Altars in Maps decreased by (20–30)%",
+      "pattern": "reroll Favours",
       "type": "suffix"
     },
     {
       "id": 50,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에서 헌정품을 보류하는 데 소모되는 공물 점수 (20–30)% 감소",
-      "pattern_ko": "보.*데",
+      "text": "Tribute cost to defer Favours at Ritual Altars in Maps decreased by (20–30)%",
+      "pattern": "defer Favours",
       "type": "suffix"
     },
     {
       "id": 51,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에 보류한 헌정품이 다시 등장하는 시간 (25–40)% 가속",
-      "pattern_ko": "시.등",
+      "text": "Deferred Favours reappear (25–40)% faster at Ritual Altars in Maps",
+      "pattern": "Deferred Favours",
       "type": "suffix"
     },
     {
       "id": 52,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단이 헌정품 무작위 변경 추가 (1–3)회 허용",
-      "pattern_ko": "허용",
+      "text": "Ritual Altars allow (1–3) additional Favour rerolls in Maps",
+      "pattern": "Favour rerolls",
       "type": "suffix"
     },
     {
       "id": 53,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에서 무작위 변경된 헌정품이 (3–6)%의 확률로 공물 점수를 소모하지 않음",
-      "pattern_ko": "를.소모",
+      "text": "Rerolled Favours at Ritual Altars in Maps have a (3–6)% chance to cost no Tribute",
+      "pattern": "cost no Tribute",
       "type": "suffix"
     },
     {
       "id": 54,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에서 되살아난 몬스터가 마법 등급일 확률 (35–70)% 증가",
-      "pattern_ko": "법.등",
+      "text": "Probability for monsters revived at Ritual Altars in Maps to be Magic increased by (35–70)%",
+      "pattern": "revived at Ritual",
       "type": "suffix"
     },
     {
       "id": 55,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 제단에서 되살아난 몬스터가 희귀 등급일 확률 (25–40)% 증가",
-      "pattern_ko": "터가.희",
+      "text": "Probability for monsters revived at Ritual Altars in Maps to be Rare increased by (25–40)%",
+      "pattern": "revived at Ritual Altars",
       "type": "suffix"
     },
     {
       "id": 56,
       "tablet_type_id": 5,
-      "text_ko": "지도 내 의식 헌정품이 징조일 확률 (35–70)% 증가",
-      "pattern_ko": "징조",
+      "text": "Probability for Ritual Favours to be Omens increased by (35–70)%",
+      "pattern": "Ritual Favours to be Omens",
       "type": "suffix"
     },
     {
       "id": 57,
       "tablet_type_id": 6,
-      "text_ko": "지도에 금고 (1–2)개 추가 등장",
-      "pattern_ko": "금고.*추",
+      "text": "Maps contain (1–2) additional Strongboxes",
+      "pattern": "additional Strongboxes",
       "type": "suffix"
     },
     {
       "id": 58,
       "tablet_type_id": 6,
-      "text_ko": "지도에 성소 (1–2)개 추가 등장",
-      "pattern_ko": "성소.*추",
+      "text": "Maps contain (1–2) additional Shrines",
+      "pattern": "additional Shrines",
       "type": "suffix"
     },
     {
       "id": 59,
       "tablet_type_id": 6,
-      "text_ko": "지도에 에센스 (1–2)개 추가 등장",
-      "pattern_ko": "센.*추",
+      "text": "Maps contain (1–2) additional Essences",
+      "pattern": "additional Essences",
       "type": "suffix"
     },
     {
       "id": 70,
       "tablet_type_id": 6,
-      "text_ko": "지도에 아즈메리 혼백 (1–2)개 추가 등장",
-      "pattern_ko": "혼.*추",
+      "text": "Maps contain (1–2) additional Azmeri Wisps",
+      "pattern": "additional Azmeri Wisps",
       "type": "suffix"
     },
     {
       "id": 60,
       "tablet_type_id": 6,
-      "text_ko": "지도 보스가 떨어뜨리는 경로석의 수량 (18–30)% 증가",
-      "pattern_ko": "석의",
+      "text": "Waystone quantity dropped by Map Bosses increased by (18–30)%",
+      "pattern": "Waystone quantity dropped",
       "type": "suffix"
     },
     {
       "id": 61,
       "tablet_type_id": 6,
-      "text_ko": "지도 보스가 주는 경험치 (40–80)% 증폭",
-      "pattern_ko": "주는.경",
+      "text": "Experience granted by Map Bosses amplified by (40–80)%",
+      "pattern": "Experience granted",
       "type": "suffix"
     },
     {
       "id": 62,
       "tablet_type_id": 6,
-      "text_ko": "지도 보스가 떨어뜨리는 아이템의 희귀도 (35–60)% 증가",
-      "pattern_ko": "스가.*희",
+      "text": "Item Rarity from Map Bosses increased by (35–60)%",
+      "pattern": "Item Rarity from Map Bosses",
       "type": "suffix"
     },
     {
       "id": 63,
       "tablet_type_id": 6,
-      "text_ko": "지도 보스가 떨어뜨리는 아이템의 수량 (13–20)% 증가",
-      "pattern_ko": "템의.수",
+      "text": "Item Quantity from Map Bosses increased by (13–20)%",
+      "pattern": "Item Quantity from Map Bosses",
       "type": "suffix"
     },
     {
       "id": 72,
       "tablet_type_id": 13,
-      "text_ko": "지도 내 심연에서 생성되는 몬스터 (20–30)% 증가",
-      "pattern_ko": "심.*생.*증",
+      "text": "Monsters spawned from Abysses in Maps increased by (20–30)%",
+      "pattern": "Monsters spawned from Abysses",
       "type": "suffix"
     },
     {
       "id": 73,
       "tablet_type_id": 13,
-      "text_ko": "지도 내 심연에 추가 희귀 몬스터 (2–3)마리 생성",
-      "pattern_ko": "심.*추.*몬",
+      "text": "Spawn (2–3) additional Rare Monsters in Abysses in Maps",
+      "pattern": "additional Rare Monsters in Abysses",
       "type": "suffix"
     },
     {
       "id": 137,
       "tablet_type_id": 13,
-      "text_ko": "닫은 구덩이 하나당 심연 몬스터의 효율 (8–12)%씩, 최대 100%까지 증가",
-      "pattern_ko": "하나당",
+      "text": "Abyss Monster efficiency increased by (8–12)% per closed pit, up to a maximum of 100%",
+      "pattern": "closed pit",
       "type": "suffix"
     },
     {
       "id": 75,
       "tablet_type_id": 13,
-      "text_ko": "지도 내 심연이 심연 지하로 이어질 확률 (10–20)% 증가",
-      "pattern_ko": "지하",
+      "text": "Probability for Abysses in Maps to lead to Abyssal Depths increased by (10–20)%",
+      "pattern": "Abyssal Depths",
       "type": "suffix"
     },
     {
       "id": 76,
       "tablet_type_id": 13,
-      "text_ko": "지도에 심연 1개 추가 등장",
-      "pattern_ko": "심.*1개",
+      "text": "Maps contain 1 additional Abyss",
+      "pattern": "additional Abyss",
       "type": "suffix"
     },
     {
       "id": 77,
       "tablet_type_id": 13,
-      "text_ko": "지도 내 심연 구덩이에서 보상을 제공할 확률 2배",
-      "pattern_ko": "2배",
+      "text": "Abyss pits in Maps have double the probability to grant rewards",
+      "pattern": "double the probability",
       "type": "suffix"
     },
     {
       "id": 78,
       "tablet_type_id": 13,
-      "text_ko": "지도에 (20–40)% 확률로 심연 4개 추가 등장",
-      "pattern_ko": "연.4",
+      "text": "(20–40)% chance for Maps to contain 4 additional Abysses",
+      "pattern": "4 additional Abysses",
       "type": "suffix"
     },
     {
       "id": 79,
       "tablet_type_id": 13,
-      "text_ko": "지도 내 심연 몬스터가 심연 속성을 보유할 확률 (20–30)% 증가",
-      "pattern_ko": "심.*속",
+      "text": "Probability for Abyss monsters in Maps to have Abyss modifiers increased by (20–30)%",
+      "pattern": "Abyss modifiers",
       "type": "suffix"
     },
     {
       "id": 80,
       "tablet_type_id": 13,
-      "text_ko": "지도 내 심연에서 훼손된 화폐가 등장할 확률 (20–30)% 증가",
-      "pattern_ko": "훼손",
+      "text": "Probability for Desecrated Currency to appear in Abysses in Maps increased by (20–30)%",
+      "pattern": "Desecrated Currency",
       "type": "suffix"
     }
   ]
