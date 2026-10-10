@@ -94,7 +94,7 @@ export default function App() {
         setLeague((current) => current || result.data[0]?.id || "");
       })
       .catch((err: unknown) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : "리그 목록을 불러오지 못했습니다.");
+        if (!cancelled) setError(err instanceof Error ? err.message : "Failed to load league list.");
       });
     return () => {
       cancelled = true;
@@ -115,7 +115,7 @@ export default function App() {
         setRows(market.rows);
         setFetchedAt(market.fetchedAt);
       } catch (err: unknown) {
-        if (!cancelled) setError(err instanceof Error ? err.message : "시세를 불러오지 못했습니다.");
+        if (!cancelled) setError(err instanceof Error ? err.message : "Failed to load market prices.");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -162,7 +162,7 @@ export default function App() {
       .filter((row) => !filterId || row.id === filterId)
       .sort((a, b) => {
         const direction = sortDir === "asc" ? 1 : -1;
-        if (sortKey === "name") return a.koName.localeCompare(b.koName, "ko") * direction;
+        if (sortKey === "name") return a.name.localeCompare(b.name, "en") * direction;
         return (a[sortKey] - b[sortKey]) * direction;
       });
   }, [rows, filterId, enabledCats, sortKey, sortDir, watchIds, watchOnly]);
@@ -207,25 +207,24 @@ export default function App() {
 
   const emptyMessage =
     enabledCats.length === 0
-      ? "분류를 하나 이상 선택하세요."
+      ? "Please select at least one category."
       : watchOnly
-        ? "선택한 화폐가 없습니다. 체크박스로 고른 뒤 다시 눌러 전체 목록으로 돌아가세요."
-        : "검색 결과가 없습니다.";
+        ? "No currencies selected. Check items to watch them, then click here again to return to the full list."
+        : "No results found.";
 
   return (
     <div className="page">
       <header className="hero">
         <div>
-          <p className="eyebrow">Path of Exile 2 · 로컬 시세</p>
-          <h1>화폐 실시간 교환비</h1>
+          <p className="eyebrow">Path of Exile 2 · Live Rates</p>
+          <h1>Real-Time Currency Exchange</h1>
           <p className="lede">
-            전체 시세를 엑잘티드·카오스·신성 기준으로 한 번에 비교합니다. 시세는 poe.ninja 교환 시장
-            데이터를 5분 캐시로 가져옵니다.
+            Compare all currency values against Exalted, Chaos, and Divine Orbs in one place. Market data is fetched from poe.ninja with a 5-minute cache.
           </p>
         </div>
         <div className="toolbar">
           <label>
-            리그
+            League
             <select value={league} onChange={(event) => setLeague(event.target.value)}>
               {leagues.map((item) => (
                 <option key={item.id} value={item.id}>
@@ -235,7 +234,7 @@ export default function App() {
             </select>
           </label>
           <button type="button" className="ghost" onClick={() => setRefreshToken((value) => value + 1)}>
-            {loading ? "불러오는 중…" : `갱신 · ${fetchedAt ? timeAgo(fetchedAt) : "대기"}`}
+            {loading ? "Loading…" : `Refresh · ${fetchedAt ? timeAgo(fetchedAt) : "Ready"}`}
           </button>
         </div>
       </header>
@@ -244,13 +243,13 @@ export default function App() {
 
       <section className="calculator">
         <div className="calc-head">
-          <h2>교환 계산기</h2>
-          <p>가진 화폐와 받고 싶은 화폐를 고르면 몇 대 몇인지 바로 나옵니다.</p>
+          <h2>Exchange Calculator</h2>
+          <p>Select what you have and what you want to calculate exchange rates instantly.</p>
         </div>
         <div className="calc-grid">
-          <CurrencyPicker label="가진 화폐" value={haveId} options={currencyOptions} onChange={setHaveId} />
+          <CurrencyPicker label="You Have" value={haveId} options={currencyOptions} onChange={setHaveId} />
           <label>
-            수량
+            Amount
             <input
               inputMode="decimal"
               value={amount}
@@ -267,23 +266,23 @@ export default function App() {
           >
             ⇄
           </button>
-          <CurrencyPicker label="받을 화폐" value={wantId} options={currencyOptions} onChange={setWantId} />
+          <CurrencyPicker label="You Want" value={wantId} options={currencyOptions} onChange={setWantId} />
           <div className="calc-result">
-            <span>예상 수령</span>
+            <span>Estimated Receive</span>
             <div className="calc-result-card">
               <CurrencyIcon row={want} size={28} />
               <div>
                 <strong>{converted == null ? "—" : formatRate(converted)}</strong>
-                <small>{want?.koName ?? "화폐 선택"}</small>
+                <small>{want?.name ?? "Select currency"}</small>
               </div>
             </div>
           </div>
         </div>
         {have && want && (
           <p className="calc-note">
-            현재 시세 {have.koName} : {want.koName} = 1 : {formatRate(have.divineValue / want.divineValue)}
+            Current Rate: {have.name} : {want.name} = 1 : {formatRate(have.divineValue / want.divineValue)}
             {" · "}
-            역방향 1 : {formatRate(want.divineValue / have.divineValue)}
+            Inverse: 1 : {formatRate(want.divineValue / have.divineValue)}
           </p>
         )}
       </section>
@@ -291,21 +290,21 @@ export default function App() {
       <section className="table-wrap">
         <div className="table-head">
           <div>
-            <h2>전체 시세</h2>
+            <h2>Market Prices</h2>
             <p>
-              가치를 엑잘티드·카오스·신성으로 환산합니다. {now && fetchedAt ? `${timeAgo(fetchedAt)} 갱신` : ""}
-              {` · ${filtered.length}개`}
+              Values converted to Exalted, Chaos, and Divine Orbs. {now && fetchedAt ? `Updated ${timeAgo(fetchedAt)}` : ""}
+              {` · ${filtered.length} items`}
             </p>
           </div>
           <div className="filters">
             <CurrencyPicker
-              label="화폐 검색"
+              label="Search Currency"
               value={filterId}
               options={currencyOptions}
               onChange={setFilterId}
-              placeholder="전체 화폐"
+              placeholder="All Currencies"
               allowClear
-              clearLabel="전체 화폐"
+              clearLabel="All Currencies"
             />
             <select
               value={`${sortKey}:${sortDir}`}
@@ -315,17 +314,17 @@ export default function App() {
                 setSortDir(dir);
               }}
             >
-              <option value="divineValue:desc">가치 높은순</option>
-              <option value="divineValue:asc">가치 낮은순</option>
-              <option value="name:asc">이름순</option>
-              <option value="volumeDivine:desc">거래량 많은순</option>
+              <option value="divineValue:desc">Highest Value</option>
+              <option value="divineValue:asc">Lowest Value</option>
+              <option value="name:asc">Name</option>
+              <option value="volumeDivine:desc">Highest Volume</option>
             </select>
             <button
               type="button"
               className={`ghost ${watchOnly ? "active" : ""}`}
               onClick={() => setWatchOnly((current) => !current)}
             >
-              {watchOnly ? `선택 ${watchIds.length}개만` : "선택해서 보기"}
+              {watchOnly ? `Watching (${watchIds.length})` : "Watchlist"}
             </button>
           </div>
         </div>
@@ -337,7 +336,7 @@ export default function App() {
               checked={allCatsOn}
               onChange={() => setEnabledCats(allCatsOn ? [] : [...ALL_CATEGORY_IDS])}
             />
-            전체
+            All
           </label>
           {CATEGORIES.map((item) => (
             <label key={item.id}>
@@ -358,15 +357,15 @@ export default function App() {
                 <th className="check-col" />
                 <th>
                   <button type="button" onClick={() => toggleSort("name")}>
-                    화폐{sortMark("name")}
+                    Currency{sortMark("name")}
                   </button>
                 </th>
-                <th>분류</th>
+                <th>Category</th>
                 <th>
                   <button type="button" onClick={() => toggleSort("divineValue")}>
                     <span className="quote-head">
                       <CurrencyIcon row={exalted} size={18} />
-                      엑잘{sortMark("divineValue")}
+                      Exalted{sortMark("divineValue")}
                     </span>
                   </button>
                 </th>
@@ -374,7 +373,7 @@ export default function App() {
                   <button type="button" onClick={() => toggleSort("divineValue")}>
                     <span className="quote-head">
                       <CurrencyIcon row={chaos} size={18} />
-                      카오스
+                      Chaos
                     </span>
                   </button>
                 </th>
@@ -382,16 +381,16 @@ export default function App() {
                   <button type="button" onClick={() => toggleSort("divineValue")}>
                     <span className="quote-head">
                       <CurrencyIcon row={divine} size={18} />
-                      신성
+                      Divine
                     </span>
                   </button>
                 </th>
                 <th>
                   <button type="button" onClick={() => toggleSort("volumeDivine")}>
-                    거래량{sortMark("volumeDivine")}
+                    Volume{sortMark("volumeDivine")}
                   </button>
                 </th>
-                <th>추세</th>
+                <th>Trend</th>
               </tr>
             </thead>
             <tbody>
@@ -413,15 +412,15 @@ export default function App() {
                         checked={watched}
                         onClick={(event) => event.stopPropagation()}
                         onChange={() => toggleWatch(row)}
-                        aria-label={`${row.koName} 선택`}
+                        aria-label={`Select ${row.name}`}
                       />
                     </td>
                     <td>
                       <div className="name-cell">
                         <CurrencyIcon row={row} size={28} />
                         <div>
-                          <strong>{row.koName}</strong>
-                          <span>{row.name}</span>
+                          <strong>{row.name}</strong>
+                          <span>{row.id}</span>
                         </div>
                       </div>
                     </td>
