@@ -1,13 +1,15 @@
 import { getModByRef, tabletTypeName, tabletTypes, type ModRef } from "./data";
 import { tradeStatIdForRef } from "./tradeStatMap";
 
-/** 서판 종류별 이미지 (poe2db 게임 아이콘) */
+/** Tablet icons by type (poe2db game asset URLs) */
 export const TABLET_ICONS: Record<number, string> = Object.fromEntries(
   tabletTypes.map((t) => [t.id, `https://cdn.poe2db.tw/image/Art/2DItems/Currency/PrecursorTablets/${t.icon}.webp`]),
 );
 
-/** 카카오 경매장은 한글 베이스 이름만 받는다 ("Breach Tablet"은 Unknown item base type). */
-const TABLET_BASE_KO: Record<number, string> = Object.fromEntries(tabletTypes.map((t) => [t.id, t.trade_ko]));
+/** Tablet base type names for official trade search */
+const TABLET_BASE_EN: Record<number, string> = Object.fromEntries(
+  tabletTypes.map((t) => [t.id, t.tradeName]),
+);
 
 export type SearchRarity = "any" | "magic" | "rare";
 
@@ -15,11 +17,11 @@ export type TabletSearchInput = {
   refs: ModRef[];
   tabletTypeId?: number;
   rarity: SearchRarity;
-  /** 남은 사용 횟수 최소값 */
+  /** Minimum remaining uses */
   minUses?: number;
 };
 
-/** 서판 종류: 직접 고른 종류, 없으면 접미 옵션들이 모두 같은 종류일 때 그 종류. */
+/** Determine tablet type: explicit user choice, or implicit if all selected suffixes belong to the same type. */
 export function resolveTabletTypeId(refs: ModRef[], tabletTypeId?: number): number | undefined {
   if (tabletTypeId != null) return tabletTypeId;
   const suffixTypes = new Set(
@@ -28,7 +30,7 @@ export function resolveTabletTypeId(refs: ModRef[], tabletTypeId?: number): numb
   return suffixTypes.size === 1 ? [...suffixTypes][0] : undefined;
 }
 
-/** 선택한 옵션으로 경매장 검색 조건을 만든다. 옵션이 여러 개면 모두 붙은 매물만. */
+/** Build trade API search query from selected modifiers (AND condition for all selected stats). */
 export function buildTabletQuery({ refs, tabletTypeId, rarity, minUses }: TabletSearchInput) {
   const statIds = [...new Set(refs.map(tradeStatIdForRef).filter((id): id is string => Boolean(id)))];
   const typeId = resolveTabletTypeId(refs, tabletTypeId);
@@ -40,7 +42,7 @@ export function buildTabletQuery({ refs, tabletTypeId, rarity, minUses }: Tablet
     status: { option: "securable" },
     filters: { type_filters: { filters: typeFilters } },
   };
-  if (typeId != null && TABLET_BASE_KO[typeId]) query.type = TABLET_BASE_KO[typeId];
+  if (typeId != null && TABLET_BASE_EN[typeId]) query.type = TABLET_BASE_EN[typeId];
   const filters: Record<string, unknown>[] = statIds.map((id) => ({ id }));
   if (minUses != null && minUses > 0) {
     filters.push({ id: "pseudo.pseudo_number_of_uses_remaining", value: { min: minUses } });
@@ -50,11 +52,11 @@ export function buildTabletQuery({ refs, tabletTypeId, rarity, minUses }: Tablet
 }
 
 export function tradeSearchUrl(league: string, query: Record<string, unknown>): string {
-  const base = `https://poe.kakaogames.com/trade2/search/poe2/${encodeURIComponent(league)}`;
+  const base = `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(league)}`;
   return `${base}?q=${encodeURIComponent(JSON.stringify({ query, sort: { price: "asc" } }))}`;
 }
 
-/** 경매장 "검색 필터 가져오기"용 코드: 검색 조건 JSON을 gzip → base64url (H4sI… 형태) */
+/** Encode query object into trade filter code format (JSON -> gzip -> base64url) */
 export async function encodeFilterCode(query: Record<string, unknown>): Promise<string> {
   const bytes = new TextEncoder().encode(JSON.stringify(query));
   const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"));
@@ -65,13 +67,13 @@ export async function encodeFilterCode(query: Record<string, unknown>): Promise<
 }
 
 export type ComboCheck = {
-  /** 한 서판에 같이 붙을 수 없는 조합 — 창고·경매장 모두 결과 없음 */
+  /** Combination that cannot roll together on a single tablet */
   impossible?: string;
-  /** 마법 서판(접두·접미 각 1개)에서는 안 나오는 조합 */
+  /** Combination only possible on Rare tablets (Magic tablets can only have 1 prefix and 1 suffix) */
   rareOnly?: boolean;
 };
 
-/** 선택한 옵션을 "모두 포함"으로 찾을 때 실제로 존재할 수 있는 조합인지 확인한다. */
+/** Validate if the selected combination of modifiers can co-exist on a single tablet. */
 export function checkCombo(refs: ModRef[]): ComboCheck {
   const mods = refs.map(getModByRef).filter((mod): mod is NonNullable<typeof mod> => Boolean(mod));
   const suffixTypes = [...new Set(mods.map((mod) => mod.tablet_type_id).filter((id): id is number => id != null))];
@@ -80,7 +82,7 @@ export function checkCombo(refs: ModRef[]): ComboCheck {
   return {
     impossible:
       suffixTypes.length > 1
-        ? `${suffixTypes.map(tabletTypeName).join("·")} 서판 전용 접미는 한 서판에 같이 붙지 않아 결과가 없습니다.`
+        ? `Suffixes specific to ${suffixTypes.map(tabletTypeName).join(" and ")} tablets cannot roll together on the same tablet.`
         : undefined,
     rareOnly: prefixes > 1 || suffixes > 1,
   };
