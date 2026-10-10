@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { REGEX_CHAR_LIMIT, regexStatus } from "../tablet/buildRegex";
 import { encodeFilterCode, tradeSearchUrl } from "../tablet/tradeSearch";
 
-/** 정규식·경매장 결과를 한 줄씩 보여주는 결과 막대. */
+/** Displays regex and trade search results in a row-by-row result bar. */
 export function SearchOutputs({
   regex,
   tradeQuery,
@@ -40,28 +40,28 @@ export function SearchOutputs({
   };
 
   return (
-    <section className="search-out" aria-label="검색 결과">
+    <section className="search-out" aria-label="Search Results">
       <div className="search-out-row">
-        <span className="search-out-label">정규식</span>
+        <span className="search-out-label">Regex</span>
         <code title={regex} className={regex ? undefined : "empty"}>
-          {regex || "옵션을 고르면 만들어집니다"}
+          {regex || "Select options to generate"}
         </code>
         <button type="button" className="btn btn-primary" disabled={!regex} onClick={() => void copy()}>
-          {copied ? "복사됨" : "복사"}
+          {copied ? "Copied" : "Copy"}
         </button>
       </div>
       <div className="search-out-row">
-        <span className="search-out-label">경매장</span>
+        <span className="search-out-label">Trade</span>
         <code title={code}>{code || "…"}</code>
         <a className="btn btn-primary" href={tradeSearchUrl(league, tradeQuery)} target="_blank" rel="noreferrer">
-          검색
+          Search
         </a>
       </div>
       {(status.overLimit || note) && (
         <div className="search-out-note">
           {status.overLimit && (
             <span className="warn">
-              정규식이 {status.length}자로 {REGEX_CHAR_LIMIT}자를 넘습니다.
+              Regex length is {status.length}, exceeding the limit of {REGEX_CHAR_LIMIT} characters.
             </span>
           )}
           {note}
@@ -97,7 +97,7 @@ export function Segmented<T extends string>({
   );
 }
 
-/** 이름표가 붙은 조작 묶음 */
+/** Labeled control group container */
 export function ControlGroup({
   label,
   children,
