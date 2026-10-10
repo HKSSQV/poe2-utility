@@ -7,9 +7,9 @@ export function CurrencyPicker({
   value,
   options,
   onChange,
-  placeholder = "화폐 선택",
+  placeholder = "Select currency",
   allowClear = false,
-  clearLabel = "전체",
+  clearLabel = "All",
 }: {
   label: string;
   value: string;
@@ -30,7 +30,6 @@ export function CurrencyPicker({
     if (!needle) return options;
     return options.filter(
       (row) =>
-        row.koName.toLowerCase().includes(needle) ||
         row.name.toLowerCase().includes(needle) ||
         row.id.includes(needle),
     );
@@ -54,14 +53,14 @@ export function CurrencyPicker({
       {label}
       <button type="button" className="picker-button" onClick={() => setOpen((current) => !current)}>
         <CurrencyIcon row={selected} size={24} />
-        <span>{selected?.koName ?? placeholder}</span>
+        <span>{selected?.name ?? placeholder}</span>
       </button>
       {open && (
         <div className="picker-menu">
           <input
             ref={searchRef}
             value={query}
-            placeholder="한글명 검색"
+            placeholder="Search currency"
             onChange={(event) => setQuery(event.target.value)}
           />
           <ul>
@@ -88,11 +87,11 @@ export function CurrencyPicker({
                   }}
                 >
                   <CurrencyIcon row={row} size={22} />
-                  <span>{row.koName}</span>
+                  <span>{row.name}</span>
                 </button>
               </li>
             ))}
-            {filtered.length === 0 && <li className="empty">검색 결과가 없습니다.</li>}
+            {filtered.length === 0 && <li className="empty">No results found.</li>}
           </ul>
         </div>
       )}
