@@ -1,18 +1,18 @@
-// 경로석 데이터 생성: poe2db.tw 경로석 옵션 표(https://poe2db.tw/kr/Waystones) → src/waystone/waystoneData.json
-// 사용: node scripts/build-waystone-data.mjs
-// - 등급(티어)만 다른 같은 옵션은 하나로 묶고 수치 범위를 합친다.
-// - pattern_ko: 창고 Ctrl+F 정규식. 다른 옵션의 모든 줄(부가 효과 포함)과 경로석 기본 속성 줄에 걸리지 않는 가장 짧은 문구.
-// - stat: 경매장 data/stats 의 explicit stat 번호 (첫 줄 문구로 매칭).
+// Waystone data generator: poe2db.tw Waystone options table (https://poe2db.tw/Waystones) → src/waystone/waystoneData.json
+// Usage: node scripts/build-waystone-data.mjs
+// - Combines identical options that only differ by tier and merges their range values.
+// - pattern: Stash Ctrl+F regex. The shortest substring that avoids matching other option lines (including extra effects) and base item properties.
+// - stat: Trade site data/stats explicit stat number (matched via first line text).
 import fs from "fs";
 
 const UA = "OAuth poe2-utility/0.1 (+https://github.com/GitDevWorld/poe2-utility)";
 const OUT = "src/waystone/waystoneData.json";
 
-const html = await (await fetch("https://poe2db.tw/kr/Waystones", { headers: { "User-Agent": "Mozilla/5.0" } })).text();
+const html = await (await fetch("https://poe2db.tw/Waystones", { headers: { "User-Agent": "Mozilla/5.0" } })).text();
 const stats = await (await fetch("https://poe.kakaogames.com/api/trade2/data/stats", { headers: { "User-Agent": UA } })).json();
 
-const start = html.indexOf('id="경로석Mods"');
-if (start < 0) throw new Error("경로석 옵션 표를 찾지 못함");
+const start = html.indexOf('id="WaystonesMods"');
+if (start < 0) throw new Error("Could not find Waystones options table");
 const table = html.slice(start, html.indexOf("</tbody>", start));
 
 const clean = (s) =>
@@ -23,15 +23,15 @@ const clean = (s) =>
     .replace(/\s+/g, " ")
     .trim();
 
-const rows = [...table.matchAll(/<tr><td>(\d+)<\/td><td>(접두어|접미어)<\/td><td>([\s\S]*?)<\/td><\/tr>/g)]
+const rows = [...table.matchAll(/<tr><td>(\d+)<\/td><td>(Prefix|Suffix)<\/td><td>([\s\S]*?)<\/td><\/tr>/g)]
   .map(([, level, affix, desc]) => ({
     level: Number(level),
-    type: affix === "접두어" ? "prefix" : "suffix",
+    type: affix === "Prefix" ? "prefix" : "suffix",
     lines: desc.split(/<br\s*\/?>/).map(clean).filter(Boolean),
   }))
   .filter((row) => row.lines.length);
 
-// 수치만 # 로 바꾼 문구 = 같은 옵션 판별 키
+// Template string converting numbers to '#' to identify matching option groups
 const template = (line) => line.replace(/\((-?\d+(?:\.\d+)?)–(-?\d+(?:\.\d+)?)\)|-?\d+(?:\.\d+)?/g, "#");
 
 const groups = new Map();
@@ -42,7 +42,7 @@ for (const row of rows) {
   groups.set(key, group);
 }
 
-// 등급별 수치를 합쳐 "(최소–최대)" 로 표시
+// Merges numeric ranges across tiers into "(min–max)" format
 function mergedText(lines) {
   const parts = lines[0].split(/(\((?:\d+(?:\.\d+)?)–(?:\d+(?:\.\d+)?)\)|\d+(?:\.\d+)?)/);
   let slot = 0;
@@ -72,32 +72,33 @@ const findStat = (line) => {
   return statByTemplate.get(key) ?? statByTemplate.get(key.replace(/#%/g, "#%"));
 };
 
-// 자동으로 못 만드는 경우만 손으로 정한다 (키: 첫 줄 문구의 수치를 # 로 바꾼 것)
+// Custom overrides for cases that cannot be automatically inferred (key: template line with #)
 const OVERRIDES = {
-  // "몬스터 피해가 …관통" 문구에 통째로 포함돼서, 피해 바로 뒤에 숫자가 오는 경우만 잡는다.
-  "몬스터 피해 #% 증가": { pattern: "터.피해.\\d" },
-  // poe2db 원문이 음수 범위 "(-4–-3)%" 라 문구를 직접 적는다.
-  "플레이어 저항 최대치 #%": { text: "플레이어 저항 최대치 -(3–10)%" },
-  // 게임 표시는 "감폭", 경매장 stat 문구는 "증폭"(값이 음수)이다.
-  "플레이어의 재사용 대기시간 회복 속도 #% 감폭": { stat: "explicit.stat_941368244" },
+  // Target specific monster damage increase
+  "Monsters deal #% increased Damage": { pattern: "deal.#%.increased" },
+  // Negative range formatting override
+  "+#% to Maximum Player Resistances": { text: "-(3–10)% to Maximum Player Resistances" },
+  // Cooldown recovery speed reduction explicit stat mapping
+  "#% reduced Cooldown Recovery Rate of Player Skills": { stat: "explicit.stat_941368244" },
 };
 
-// 경로석 아이템에 옵션 말고도 보이는 줄 (등급·기본 속성) — 패턴이 여기에 걸리면 안 된다
+// Base item lines visible on Waystone items that patterns MUST NOT match against
 const BASE_LINES = [
-  "경로석 (15등급)",
-  "경로석 등급: 15",
-  "지역에서 발견하는 아이템 수량: +50%",
-  "지역에서 발견하는 아이템 희귀도: +50%",
-  "몬스터 무리 규모: +50%",
-  "경로석 발견 확률: +50%",
-  "남은 부활 횟수: 3",
-  "타락",
+  "Waystone (Tier 15)",
+  "Waystone Tier: 15",
+  "Item Quantity: +50%",
+  "Item Rarity: +50%",
+  "Monster Pack Size: +50%",
+  "Waystone Drop Chance: +50%",
+  "Revives Remaining: 3",
+  "Corrupted",
 ];
 
 const mods = [...groups.values()].map((group, index) => {
   const first = group.rows.map((row) => row.lines[0]);
   const override = OVERRIDES[template(first[0])] ?? {};
-  // 부가 효과 줄은 등급별 수치를 합쳐서 보여준다 (줄 순서는 등급마다 같다)
+  
+  // Extra effect lines merged across tiers
   const extraCount = Math.max(...group.rows.map((row) => row.lines.length)) - 1;
   const extras = Array.from({ length: extraCount }, (_, k) =>
     mergedText(group.rows.map((row) => row.lines[k + 1]).filter(Boolean)),
@@ -105,7 +106,7 @@ const mods = [...groups.values()].map((group, index) => {
   return {
     id: index + 1,
     type: group.type,
-    text_ko: override.text ?? mergedText(first),
+    text: override.text ?? mergedText(first),
     extras,
     stat: override.stat ?? findStat(first[0]),
     patternOverride: override.pattern,
@@ -120,7 +121,8 @@ function pickPattern(mod) {
     ...mods.filter((m) => m !== mod).flatMap((m) => m.allLines.map(shown)),
     ...BASE_LINES,
   ];
-  // 숫자·기호를 뺀 글자 구간에서 후보를 만든다
+  
+  // Generate candidate regex from text segments excluding numbers/punctuation
   const text = shown(mod.allLines[0]);
   const segments = text.split(/[\d%+().,]+/).map((s) => s.trim()).filter((s) => s.length >= 2);
   for (let len = 2; len <= 8; len += 1) {
@@ -129,7 +131,7 @@ function pickPattern(mod) {
         const raw = seg.slice(i, i + len);
         if (raw.startsWith(" ") || raw.endsWith(" ")) continue;
         const pattern = raw.replace(/ /g, ".");
-        const re = new RegExp(pattern);
+        const re = new RegExp(pattern, "i");
         if (!re.test(text)) continue;
         if (others.some((line) => re.test(line))) continue;
         return pattern;
@@ -142,25 +144,25 @@ function pickPattern(mod) {
 const out = [];
 for (const mod of mods) {
   const pattern = pickPattern(mod);
-  if (!pattern) console.warn("패턴 없음:", mod.type, mod.text_ko);
-  if (!mod.stat) console.warn("경매장 stat 없음:", mod.type, mod.text_ko);
+  if (!pattern) console.warn("Missing pattern:", mod.type, mod.text);
+  if (!mod.stat) console.warn("Missing trade site stat:", mod.type, mod.text);
   out.push({
     id: mod.id,
     type: mod.type,
-    text_ko: mod.text_ko,
+    text: mod.text,
     extras: mod.extras,
-    pattern_ko: pattern ?? "",
+    pattern: pattern ?? "",
     stat: mod.stat ?? null,
   });
 }
 
 for (const mod of out) {
-  if (!mod.pattern_ko) continue;
-  const re = new RegExp(mod.pattern_ko);
+  if (!mod.pattern) continue;
+  const re = new RegExp(mod.pattern, "i");
   const self = mods.find((m) => m.id === mod.id);
-  if (!re.test(shown(self.allLines[0]))) console.warn("패턴이 자기 문구에 안 걸림:", mod.pattern_ko, mod.text_ko);
+  if (!re.test(shown(self.allLines[0]))) console.warn("Pattern did not match own text:", mod.pattern, mod.text);
   const clash = mods.filter((m) => m.id !== mod.id && m.allLines.some((line) => re.test(shown(line))));
-  if (clash.length) console.warn("패턴 겹침:", mod.pattern_ko, mod.text_ko, "→", clash.map((m) => m.allLines[0]));
+  if (clash.length) console.warn("Pattern collision:", mod.pattern, mod.text, "→", clash.map((m) => m.allLines[0]));
 }
 
 fs.mkdirSync("src/waystone", { recursive: true });
@@ -168,7 +170,7 @@ fs.writeFileSync(
   OUT,
   JSON.stringify(
     {
-      source: `poe2db.tw/kr/Waystones + 경매장 data/stats (${new Date().toISOString().slice(0, 10)} 확인)`,
+      source: `poe2db.tw/Waystones + trade data/stats (${new Date().toISOString().slice(0, 10)} verified)`,
       tiers: Array.from({ length: 16 }, (_, i) => i + 1),
       prefixOptions: out.filter((m) => m.type === "prefix"),
       suffixOptions: out.filter((m) => m.type === "suffix"),
@@ -178,4 +180,4 @@ fs.writeFileSync(
   ) + "\n",
 );
 console.log(`rows ${rows.length} → mods ${out.length} (prefix ${out.filter((m) => m.type === "prefix").length}, suffix ${out.filter((m) => m.type === "suffix").length})`);
-for (const m of out) console.log(m.type === "prefix" ? "P" : "S", m.pattern_ko.padEnd(8), m.stat ? "✓" : "✗", m.text_ko);
+for (const m of out) console.log(m.type === "prefix" ? "P" : "S", m.pattern.padEnd(12), m.stat ? "✓" : "✗", m.text);
