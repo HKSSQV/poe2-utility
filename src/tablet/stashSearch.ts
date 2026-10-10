@@ -1,8 +1,8 @@
 import { joinPatterns, REGEX_CHAR_LIMIT } from "./buildRegex";
 
 /**
- * PoE2 창고 Ctrl+F: 따옴표 블록끼리는 AND, 블록 안의 `|`는 OR.
- * `"!제외1|제외2" "종류" "옵션1|옵션2"` — 제외 옵션이 하나도 없고(종류가 맞고) 선택 옵션 중 하나라도 있는 서판을 하이라이트.
+ * PoE2 Stash Ctrl+F: Quoted blocks are combined with AND, `|` inside a block is OR.
+ * `"!exclude1|exclude2" "type" "option1|option2"` — Highlights tablets that have none of the excluded options (and match the type) while having at least one of the selected options.
  */
 export function buildStashSearchQuery(
   includePatterns: string[],
