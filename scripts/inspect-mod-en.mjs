@@ -27,8 +27,9 @@ function parseLocale(text, loc) {
 }
 
 const html = fs.readFileSync(path.join(root, ".tmp-poe2way-en.html"), "utf8");
-const data = parseLocale(html, "ko");
+// Читаем английскую локаль ("en") вместо корейской ("ko")
+const data = parseLocale(html, "en");
 for (let i = 0; i < 7; i++) {
   const mod = data.prefixOptions[i];
-  console.log(mod?.id, mod?.text_en, "|", mod?.text_ko);
+  console.log(mod?.id, "|", mod?.text);
 }
