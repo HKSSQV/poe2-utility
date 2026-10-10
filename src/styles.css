@@ -42,7 +42,7 @@ body,
 }
 
 body {
-  font-family: "Noto Sans KR", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -1788,7 +1788,6 @@ a.guide-search-go:hover {
   background: var(--gold-2);
 }
 
-/* 경로 이동 버튼: 도착 경로 색과 일치 */
 .dest-main {
   --dest: var(--gold);
 }
@@ -2110,7 +2109,6 @@ a.tablet-mod-price-col:hover {
   padding: 6px 12px;
 }
 
-/* 시세 버튼: 한 줄, 크게 */
 .tablet-mod-item > .tablet-mod-prices {
   flex-direction: row;
   align-items: center;
@@ -2154,7 +2152,6 @@ a.tablet-mod-price-col.hot {
   }
 }
 
-/* ---------- 버튼 ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -2194,7 +2191,6 @@ a.tablet-mod-price-col.hot {
   cursor: default;
 }
 
-/* ---------- 결과 막대 (정규식 · 경매장) ---------- */
 .search-out {
   display: grid;
   gap: 8px;
@@ -2288,7 +2284,6 @@ a.tablet-mod-price-col.hot {
   background: var(--gold);
 }
 
-/* ---------- 조작 묶음 ---------- */
 .ctrl-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2464,11 +2459,9 @@ a.tablet-mod-price-col.hot {
   }
 }
 
-/* ---------- 경로석 ---------- */
 .ws-section {
   margin-top: 0;
 }
-
 
 .ws-section h3 {
   margin: 0 0 10px;
@@ -2603,7 +2596,6 @@ a.tablet-mod-price-col.hot {
   }
 }
 
-/* ---------- 앱 레이아웃: 왼쪽 메뉴 ---------- */
 .app-shell {
   --sidebar-w: 232px;
   min-height: 100vh;
@@ -2760,7 +2752,6 @@ a.tablet-mod-price-col.hot {
   justify-content: center;
 }
 
-/* ---------- 모바일 ---------- */
 @media (max-width: 640px) {
   .page {
     width: calc(100% - 24px);
