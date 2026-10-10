@@ -55,7 +55,6 @@ export type CategoryId =
 export type MarketRow = {
   id: string;
   name: string;
-  koName: string;
   image: string;
   category: string;
   categoryId: CategoryId;
@@ -65,18 +64,18 @@ export type MarketRow = {
 };
 
 export const CATEGORIES: { id: CategoryId; label: string }[] = [
-  { id: "Currency", label: "화폐" },
-  { id: "Fragments", label: "조각" },
-  { id: "Ritual", label: "의식" },
-  { id: "Essences", label: "에센스" },
-  { id: "UncutGems", label: "미가공 젬" },
-  { id: "LineageSupportGems", label: "리니지 젬" },
-  { id: "SoulCores", label: "영혼 핵" },
-  { id: "Runes", label: "룬" },
-  { id: "Idols", label: "우상" },
-  { id: "Abyss", label: "심연" },
-  { id: "Delirium", label: "환영" },
-  { id: "Breach", label: "균열" },
-  { id: "Expedition", label: "탐험" },
-  { id: "Verisium", label: "베리시움" },
+  { id: "Currency", label: "Currency" },
+  { id: "Fragments", label: "Fragments" },
+  { id: "Ritual", label: "Ritual" },
+  { id: "Essences", label: "Essences" },
+  { id: "UncutGems", label: "Uncut Gems" },
+  { id: "LineageSupportGems", label: "Lineage Gems" },
+  { id: "SoulCores", label: "Soul Cores" },
+  { id: "Runes", label: "Runes" },
+  { id: "Idols", label: "Idols" },
+  { id: "Abyss", label: "Abyss" },
+  { id: "Delirium", label: "Delirium" },
+  { id: "Breach", label: "Breach" },
+  { id: "Expedition", label: "Expedition" },
+  { id: "Verisium", label: "Verisium" },
 ];
