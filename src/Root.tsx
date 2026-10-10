@@ -15,26 +15,26 @@ const HASH: Record<Page, string> = {
 };
 
 const TITLES: Record<Page, string> = {
-  exchange: "POE2 화폐 교환비",
-  tablet: "POE2 서판",
-  waystone: "POE2 경로석",
-  "guide-ring": "POE2 제작 가이드 · 풀매찬 반지",
-  "guide-jewel": "POE2 제작 가이드 · 5옵션 보석",
+  exchange: "POE2 Currency Exchange",
+  tablet: "POE2 Tablets",
+  waystone: "POE2 Waystones",
+  "guide-ring": "POE2 Crafting Guide · Full MF Ring",
+  "guide-jewel": "POE2 Crafting Guide · 5-Mod Jewel",
 };
 
 const NAV: { title?: string; items: { page: Page; label: string }[] }[] = [
   {
     items: [
-      { page: "exchange", label: "화폐" },
-      { page: "tablet", label: "서판" },
-      { page: "waystone", label: "경로석" },
+      { page: "exchange", label: "Currency" },
+      { page: "tablet", label: "Tablets" },
+      { page: "waystone", label: "Waystones" },
     ],
   },
   {
-    title: "제작 가이드",
+    title: "Crafting Guides",
     items: [
-      { page: "guide-ring", label: "풀매찬 반지" },
-      { page: "guide-jewel", label: "5옵션 보석" },
+      { page: "guide-ring", label: "Full MF Ring" },
+      { page: "guide-jewel", label: "5-Mod Jewel" },
     ],
   },
 ];
@@ -73,18 +73,18 @@ export default function Root() {
   return (
     <div className={`app-shell${menuOpen ? " menu-open" : ""}`}>
       <header className="app-topbar">
-        <button type="button" className="app-menu-btn" aria-label="메뉴 열기" onClick={() => setMenuOpen(true)}>
+        <button type="button" className="app-menu-btn" aria-label="Open menu" onClick={() => setMenuOpen(true)}>
           <span />
           <span />
           <span />
         </button>
-        <strong>POE2 유틸리티</strong>
+        <strong>POE2 Utilities</strong>
       </header>
 
-      <aside className="app-sidebar" aria-label="메뉴">
+      <aside className="app-sidebar" aria-label="Menu">
         <div className="app-brand">
-          <strong>POE2 유틸리티</strong>
-          <span>Path of Exile 2 도구 모음</span>
+          <strong>POE2 Utilities</strong>
+          <span>Path of Exile 2 Toolkit</span>
         </div>
         <nav className="app-nav">
           {NAV.map((group, index) => (
@@ -105,7 +105,7 @@ export default function Root() {
           ))}
         </nav>
       </aside>
-      <button type="button" className="app-scrim" aria-label="메뉴 닫기" onClick={() => setMenuOpen(false)} />
+      <button type="button" className="app-scrim" aria-label="Close menu" onClick={() => setMenuOpen(false)} />
 
       <main className="app-main">
         {page === "tablet" ? (
